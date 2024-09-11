@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useState } from "react";
+import React from "react";
 
 import { COLORS_FIRST_TO_ACT, COLORS_SECOND_TO_ACT, HAND_RANGES } from "@/constants";
 
