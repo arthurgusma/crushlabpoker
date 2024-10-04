@@ -1,5 +1,3 @@
-import { ActionColors } from "@/interfaces/Chart/types";
-
 export const HAND_RANGES: string[][] = [
     ["AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s"],
     ["AKo", "KK", "KQs", "KJs", "KTs", "K9s", "K8s", "K7s", "K6s", "K5s", "K4s", "K3s", "K2s"],
@@ -15,21 +13,3 @@ export const HAND_RANGES: string[][] = [
     ["A3o", "K3o", "Q3o", "J3o", "T3o", "93o", "83o", "73o", "63o", "53o", "43o", "33", "32s"],
     ["A2o", "K2o", "Q2o", "J2o", "T2o", "92o", "82o", "72o", "62o", "52o", "42o", "32o", "22"],
 ];
-
-export const COLORS_FIRST_TO_ACT: ActionColors = {
-    fold: "#FFFFFF", 
-    open_fold_vs_3bet: "#F28B82",
-    open_call_vs_3bet: "#AECBFA",
-    open_4bet_fold_vs_3bet: "#81C995",
-    open_4bet_call_vs_3bet: "#FBBC04",
-  };
-  
-export const COLORS_SECOND_TO_ACT: ActionColors = {
-    fold: "#FFFFFF", 
-    call_vs_open: "#AECB",
-    call_vs_mini_raise: "#00008B",
-    "3bet_fold_vs_4bet": "#C33C54",
-    "3bet_call_vs_4bet": "#FFEB3B",
-    "3bet_all_in_vs_4bet": "#F4511E",
-};
-  
