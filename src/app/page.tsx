@@ -1,9 +1,6 @@
-
 import HomeForm from "@/components/HomeForm";
-import "./global.css";
-import SignInButton from "@/components/SignInButton";
 
-export default function Home() {
+export default async function LogIn() {
   return (
     <main className="min-h-screen flex-col items-center justify-between p-24">
       <section className="flex items-center justify-between mx-10">

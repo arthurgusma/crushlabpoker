@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Seja lucrativo no poker com Crush Lab Poker",
 };
 
+import { UserProvider } from "@/context/UserContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -16,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}><UserProvider>{children}</UserProvider></body>
     </html>
   );
 }
