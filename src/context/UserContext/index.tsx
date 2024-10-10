@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState, ReactNode } from 'react';
+import { createContext, useState, ReactNode, useEffect } from 'react';
 import { ProvidedUserData } from './types';
 
 type UserContextType = {
@@ -12,6 +12,14 @@ export const UserContext = createContext<UserContextType>({} as UserContextType)
 
 export function UserProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<ProvidedUserData>({} as ProvidedUserData); 
+
+  useEffect(() => {
+    const sessionUser = JSON.parse(sessionStorage.getItem('user') || "{}");
+
+    if (sessionUser && Object.keys(sessionUser).length > 0 && !user.uid) {
+      setUser(sessionUser.providerData[0]);
+    }
+  }, [user]);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
