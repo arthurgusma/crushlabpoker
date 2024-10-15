@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from 'tailwindcss/colors';
 
 const config: Config = {
   content: [
@@ -15,12 +16,13 @@ const config: Config = {
       },
     },
     colors: {
+      ...colors,
       main: {
         "dark-green": "#060E0B",
         "light-green": "#1E4135",
-        "gold": "#E2C28D",
-        "red": "#BF1A2F",
-        "champagne": "#F3E5CE",
+        gold: "#E2C28D",
+        red: "#BF1A2F",
+        champagne: "#F3E5CE",
       },
       chart: {
         red: "#d00000",
