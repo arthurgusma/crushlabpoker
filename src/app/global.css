@@ -15,10 +15,20 @@
       --background-end-rgb: 0, 0, 0;
     }
   }
-  
+
   body {
     color: theme("colors.main.champagne");
     background: theme("colors.main.light-green");
+  }
+
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
   }
   
   @layer utilities {
