@@ -8,7 +8,9 @@ export default function ChartOptionsButton({ position, selectedPosition, setSele
     return (
         <button
             key={position} 
-            className={`font-bold p-1 bg-main-gold rounded w-24 text-main-light-green hover:opacity-75 ${selectedPosition === position && "bg-chart-green"}`}
+            className={`font-bold p-1 rounded w-24 text-main-light-green hover:opacity-75 ${selectedPosition === position ? "bg-chart-green" : 
+            "bg-main-gold"
+            }`}
             onClick={() => setSelectedPosition(position)}
         >
            {position}
