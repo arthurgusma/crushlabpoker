@@ -1,3 +1,14 @@
+import { UTG_OOP, UTG_VS_SB, UTG_VS_BB, UTG_RFI } from "@/constants";
+  
+const rangeMap: Record<string, Record<string, any>> = {
+    UTG: {
+      "vs 3B OOP": UTG_OOP,
+      "vs 3B SB": UTG_VS_SB,
+      "vs 3B BB": UTG_VS_BB,
+      "RFI": UTG_RFI,
+    },
+};
+
 export function handleSelection(selectedPosition: string) {
     switch (selectedPosition) {
         case "UTG":
@@ -15,4 +26,9 @@ export function handleSelection(selectedPosition: string) {
         default:
             return [];
     }
+}
+
+export function handleSelectRange(selectedPosition: string, selectedAction: string) {
+    const positionRanges = rangeMap[selectedPosition];
+    return positionRanges[selectedAction] || positionRanges.default;
 }
