@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HAND_RANGES } from "@/constants";
+import { HAND_RANGES } from "@/constants/gloabal";
 import { ChartProps } from "./types";
 
 export const Chart: React.FC<ChartProps> = ({ range }) => {

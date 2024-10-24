@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Chart } from "../Chart";
-import { TABLE_POSITIONS } from "@/constants";
+import { TABLE_POSITIONS } from "@/constants/gloabal";
 import { handleSelection, handleSelectRange } from "./helpers";
 import ChartOptionsButton from "./ChartOptionsButton";
 import { Range } from "../Chart/types";
