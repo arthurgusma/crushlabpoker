@@ -1,4 +1,4 @@
-import { UTG_OOP, UTG_VS_SB, UTG_VS_BB, UTG_RFI } from "@/constants";
+import { UTG_OOP, UTG_VS_SB, UTG_VS_BB, UTG_RFI } from "@/constants/utgRanges";
   
 const rangeMap: Record<string, Record<string, any>> = {
     UTG: {
