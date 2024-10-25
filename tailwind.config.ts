@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import colors from 'tailwindcss/colors';
+import colors, { orange } from 'tailwindcss/colors';
 
 const config: Config = {
   content: [
@@ -29,6 +29,8 @@ const config: Config = {
         green: "#70e000",
         blue: "#1a759f",
         yellow: "#eeef20",
+        orange: "#ff7f00",
+        purple: "#a020f0",
         default: "#7a918d",
       },
     },
