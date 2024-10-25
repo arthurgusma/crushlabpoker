@@ -1,3 +1,4 @@
+import { HJ_VS_UTG_RFI, HJ_OOP, HJ_RFI, HJ_VS_SB, HJ_VS_BB } from "@/constants/hjRanges";
 import { UTG_OOP, UTG_VS_SB, UTG_VS_BB, UTG_RFI } from "@/constants/utgRanges";
   
 const rangeMap: Record<string, Record<string, any>> = {
@@ -7,6 +8,13 @@ const rangeMap: Record<string, Record<string, any>> = {
       "vs 3B BB": UTG_VS_BB,
       "RFI": UTG_RFI,
     },
+    HJ: {
+        "vs RFI UTG": HJ_VS_UTG_RFI,
+        "vs 3B OOP": HJ_OOP,
+        "vs 3B SB": HJ_VS_SB,
+        "vs 3B BB": HJ_VS_BB,
+        "RFI": HJ_RFI,
+    }
 };
 
 export function handleSelection(selectedPosition: string) {

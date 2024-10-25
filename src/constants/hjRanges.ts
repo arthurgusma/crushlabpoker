@@ -1,0 +1,29 @@
+export const HJ_RFI = {
+    raiseFirstIn: ["AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s", "AKo", "KK", "KQs", "KJs", "KTs", "K9s", "K8s", "K7s", "K6s", "K5s", "AQo", "KQo", "QQ", "QJs", "QTs", "Q9s", "Q8s", "AJo", "KJo", "QJo", "JJ", "JTs", "J9s", "J8s", "ATo", "KTo", "TT", "T9s", "T8s", "99", "98s", "88", "87s", "77", "76s", "66", "65s","55", "44"],
+};
+
+export const HJ_VS_UTG_RFI = {
+    threeBet: ["AKs", "AQs", "AJs", "ATs", "A5s", "A4s", "AKo", "KQs", "KJs", "KTs", "AQo", "QQ", "QJs", "QTs", "JJ", "JTs", "TT", "99", "88", "76s", "65s", "54s"],
+    shoveVs4Bet: ["AA", "KK"],
+};
+
+export const HJ_OOP = {
+    foldTo3Bet: ['ATs', 'A9s', 'A8s', 'A7s', 'A6s', 'A5s', 'A4s', 'A3s', 'A2s', 'KTs', 'K9s', 'K8s', 'K7s', 'K6s', 'K5s', 'AQo', 'KQo', 'QTs', 'Q9s', 'Q8s', 'AJo', 'KJo', 'QJo', 'J9s', 'J8s', 'ATo', 'KTo'],
+    call3Bet: ["AQs", "AJs", "KQs", "KJs", "QJs", "JJ", "JTs", "TT", "T9s", "T8s", "99", "98s", "88", "87s", "77", "76s", "66", "65s", "55", "44"],
+    fourBetAndFold: ["AKo"],
+    fourBetAndCall: ["AA", "AKs","KK", "QQ"],
+}
+
+export const HJ_VS_SB = {
+    foldTo3Bet: [ "A9s", "A8s", "A7s", "A6s", "A4s", "A3s", "A2s", "K9s", "K8s", "K7s", "K6s", "K5s", "KQo", "Q9s", "Q8s", "AJo", "KJo", "QJo", "J9s", "J8s", "ATo", "KTo", "T8s"],
+    call3Bet: ['AQs', 'AJs', 'ATs', 'AKo', 'KQs', 'KJs', 'KTs', 'AQo', 'QQ', 'QJs', 'QTs', 'JJ', 'JTs', 'TT', 'T9s', '99', '98s', '88', '87s', '77', '76s', '66', '65s', '55', '44'],
+    fourBetAndFold: ["A5s"],
+    fourBetAndCall: ["AA", "AKs", "KK"],
+};
+
+export const HJ_VS_BB = {
+    foldTo3Bet: ["A9s", "A8s", "A7s", "A6s", "A2s", "K8s", "K7s", "K6s", "K5s", "Q9s", "Q8s", "AJo", "KQo","KJo", "QJo", "J8s", "ATo", "KTo"],
+    call3Bet: ['AKs', 'AQs', 'AJs', 'ATs', 'A4s', 'A3s', 'AKo', 'KQs', 'KJs', 'KTs', 'K9s', 'AQo', 'QQ', 'QJs', 'QTs', 'JJ', 'JTs', 'J9s', 'TT', 'T9s', 'T8s', '99', '98s', '88', '87s', '77', '76s', '66', '65s', '55', '44'],
+    fourBetAndFold: ["A5s"],
+    fourBetAndCall: ["AA", "KK"],
+};
