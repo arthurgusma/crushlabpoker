@@ -12,7 +12,7 @@ export const Chart: React.FC<ChartProps> = ({ range }) => {
     if (range.fourBetAndFold?.includes(hand)) return "bg-chart-blue text-main-champagne";
     if (range.fourBetAndCall?.includes(hand)) return "bg-chart-yellow";
     if (range.threeBet?.includes(hand)) return "bg-chart-orange";
-    if (range.shoveVs4Bet?.includes(hand)) return "bg-chart-purple";
+    if (range.shoveVs4Bet?.includes(hand)) return "bg-chart-purple text-main-champagne";
     if (range.call?.includes(hand)) return "bg-chart-pink";
     return "bg-main-champagne"; 
   };
