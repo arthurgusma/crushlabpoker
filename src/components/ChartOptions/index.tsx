@@ -12,16 +12,16 @@ export default function ChartOptions() {
     const [selectedAction, setSelectedAction] = useState<string>("RFI");
     const [range, setRange] = useState<Range>({} as Range);
     
-    useEffect(()=>{
+    useEffect(() => {
         setRange(handleSelectRange(selectedPosition, selectedAction));
-    },[selectedPosition, selectedAction])
+    }, [selectedPosition, selectedAction]);
 
     return (
         <div>
             <h1 className="mb-2 text-main-gold">Selecione sua posição:</h1>
             <section className="flex justify-between mb-4">
             {TABLE_POSITIONS.map((position) => (
-               <ChartOptionsButton  key={position} position={position} selectedPosition={selectedPosition} setSelectedPosition={setSelectedPosition} />
+               <ChartOptionsButton  key={position} position={position} selectedPosition={selectedPosition} setSelectedPosition={setSelectedPosition} handleBB={setSelectedAction} />
             ))}
             </section>
             <h1 className="mb-2 text-main-gold">Selecione a ação:</h1>
