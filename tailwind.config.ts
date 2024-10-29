@@ -31,6 +31,7 @@ const config: Config = {
         yellow: "#eeef20",
         orange: "#ff7f00",
         purple: "#a020f0",
+        "light-blue": "#80C4E9",
         default: "#7a918d",
       },
     },
