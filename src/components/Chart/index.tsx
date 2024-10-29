@@ -1,19 +1,19 @@
 import React from "react";
 
-import { HAND_RANGES } from "@/constants/gloabal";
+import { BACKGROUND_RANGE_COLORS, HAND_RANGES } from "@/constants/gloabal";
 import { ChartProps } from "./types";
 
 export const Chart: React.FC<ChartProps> = ({ range }) => {
 
   const handleGetHandColor = (hand: string) => {
-    if (range.raiseFirstIn?.includes(hand)) return "bg-chart-green";
-    if (range.foldTo3Bet?.includes(hand)) return "bg-chart-red text-main-champagne";
-    if (range.call3Bet?.includes(hand)) return "bg-chart-green";
-    if (range.fourBetAndFold?.includes(hand)) return "bg-chart-blue text-main-champagne";
-    if (range.fourBetAndCall?.includes(hand)) return "bg-chart-yellow";
-    if (range.threeBet?.includes(hand)) return "bg-chart-orange";
-    if (range.shoveVs4Bet?.includes(hand)) return "bg-chart-purple text-main-champagne";
-    if (range.call?.includes(hand)) return "bg-chart-light-blue";
+    if (range.raiseFirstIn?.includes(hand)) return BACKGROUND_RANGE_COLORS["raiseFirstIn"];
+    if (range.foldTo3Bet?.includes(hand)) return BACKGROUND_RANGE_COLORS["foldTo3Bet"];
+    if (range.call3Bet?.includes(hand)) return BACKGROUND_RANGE_COLORS["call3Bet"];
+    if (range.fourBetAndFold?.includes(hand)) return BACKGROUND_RANGE_COLORS["fourBetAndFold"];
+    if (range.fourBetAndCall?.includes(hand)) return BACKGROUND_RANGE_COLORS["fourBetAndCall"];
+    if (range.threeBet?.includes(hand)) return BACKGROUND_RANGE_COLORS["threeBet"];
+    if (range.shoveVs4Bet?.includes(hand)) return BACKGROUND_RANGE_COLORS["shoveVs4Bet"];
+    if (range.call?.includes(hand)) return BACKGROUND_RANGE_COLORS["call"];
     return "bg-main-champagne"; 
   };
 
