@@ -1,3 +1,5 @@
+import { Range } from "@/components/Chart/types";
+
 export const HAND_RANGES: string[][] = [
     ["AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s"],
     ["AKo", "KK", "KQs", "KJs", "KTs", "K9s", "K8s", "K7s", "K6s", "K5s", "K4s", "K3s", "K2s"],
@@ -15,3 +17,25 @@ export const HAND_RANGES: string[][] = [
 ];
   
 export const TABLE_POSITIONS = ["UTG", "HJ", "CO", "BTN", "SB", "BB"];
+
+export const BACKGROUND_RANGE_COLORS: { [key in keyof Range]: string } = {
+    raiseFirstIn: "bg-chart-green",
+    foldTo3Bet: "bg-chart-red text-main-champagne",
+    call3Bet: "bg-chart-green",
+    fourBetAndFold: "bg-chart-blue text-main-champagne",
+    fourBetAndCall: "bg-chart-yellow",
+    threeBet: "bg-chart-orange",
+    shoveVs4Bet: "bg-chart-purple text-main-champagne",
+    call: "bg-chart-light-blue"
+}
+
+export const ACTIONS_DESCRIPTION = {
+    raiseFirstIn: "Raise First In",
+    foldTo3Bet: "Fold para 3Bet",
+    call3Bet: "Pagar 3Bet",
+    fourBetAndFold: "4Bet e Fold vs All In",
+    fourBetAndCall: "4Bet e Call vs All In",
+    threeBet: "3Bet",
+    shoveVs4Bet: "All In Vs 4Bet",
+    call: "Pagar",
+}
