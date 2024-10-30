@@ -4,7 +4,6 @@ import { initReactI18next } from "react-i18next";
 
 import translationsInEnglish from './locales/en/translation.json';
 import translationsInPortuguese from './locales/pt/translation.json';
-import { useEffect } from "react";
 
 const resources = {
   "en-US": {
