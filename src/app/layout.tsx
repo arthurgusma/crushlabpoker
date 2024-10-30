@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./global.css";
-import '../i18n';
+
+import I18nInitializer from './_i18nInitializer';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-      <Suspense fallback="Loading...">
-        <UserProvider>{children}</UserProvider>
-      </Suspense>
-      </body>
+        <body className={inter.className}>
+            <I18nInitializer />
+            <UserProvider>{children}</UserProvider>
+        </body>
     </html>
   );
 }
