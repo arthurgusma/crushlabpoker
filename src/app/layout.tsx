@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 };
 
 import { UserProvider } from "@/context/UserContext";
-import { Suspense } from "react";
 
 export default function RootLayout({
   children,
