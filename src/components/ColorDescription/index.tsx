@@ -1,18 +1,22 @@
-import { ACTIONS_DESCRIPTION, BACKGROUND_RANGE_COLORS } from "@/constants/gloabal";
+"use client";
+
+import { BACKGROUND_RANGE_COLORS } from "@/constants/gloabal";
 import { Range } from "../Chart/types";
+
+import { useTranslation } from 'react-i18next'
 
 interface ColorDescriptionProps {
     range: Range;
 }
 
 export default function ColorDescription ({ range }: ColorDescriptionProps) {
+    const { t } = useTranslation();
 
     function handleGetColorDescription(range: Range): JSX.Element[] {
         return Object.keys(range).map((action) => {
-            const actionKey = action as keyof typeof ACTIONS_DESCRIPTION;
             return (
                 <li key={action} className={`${BACKGROUND_RANGE_COLORS[action as keyof Range]} p-2 m-2 min-w-32 text-black`}>
-                    <span>{ACTIONS_DESCRIPTION[actionKey]}</span>
+                    <span>{t(`actions.${action}`)}</span>
                 </li>
             )
         })

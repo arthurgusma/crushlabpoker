@@ -28,14 +28,3 @@ export const BACKGROUND_RANGE_COLORS: { [key in keyof Range]: string } = {
     shoveVs4Bet: "bg-chart-purple text-main-champagne",
     call: "bg-chart-light-blue"
 }
-
-export const ACTIONS_DESCRIPTION = {
-    raiseFirstIn: "Raise First In",
-    foldTo3Bet: "Fold para 3Bet",
-    call3Bet: "Pagar 3Bet",
-    fourBetAndFold: "4Bet e Fold vs All In",
-    fourBetAndCall: "4Bet e Call vs All In",
-    threeBet: "3Bet",
-    shoveVs4Bet: "All In Vs 4Bet",
-    call: "Pagar",
-}
