@@ -1,0 +1,12 @@
+{
+    "actions": {
+        "raiseFirstIn": "Raise First In",
+        "foldTo3Bet": "Fold to 3Bet",
+        "call3Bet": "Call 3Bet",
+        "fourBetAndFold": "4Bet and Fold vs All In",
+        "fourBetAndCall": "4Bet and Call vs All In",
+        "threeBet": "3Bet",
+        "shoveVs4Bet": "All In Vs 4Bet",
+        "call": "Call"
+    }
+}

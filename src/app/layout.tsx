@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./global.css";
+import '../i18n';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 import { UserProvider } from "@/context/UserContext";
+import { Suspense } from "react";
 
 export default function RootLayout({
   children,
@@ -18,7 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}><UserProvider>{children}</UserProvider></body>
+      <body className={inter.className}>
+      <Suspense fallback="Loading...">
+        <UserProvider>{children}</UserProvider>
+      </Suspense>
+      </body>
     </html>
   );
 }
