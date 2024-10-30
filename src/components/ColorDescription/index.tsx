@@ -24,7 +24,7 @@ export default function ColorDescription ({ range }: ColorDescriptionProps) {
 
     return (
         <section className="p-4 mt-40 text-center">
-            <h2 className="text-lg text-main-gold">Descrição</h2>
+            <h2 className="text-lg text-main-gold">{t("actions.label")}</h2>
             <ul className="text-sm">
                 {handleGetColorDescription(range)}
             </ul>
