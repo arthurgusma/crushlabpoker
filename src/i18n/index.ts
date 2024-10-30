@@ -4,12 +4,13 @@ import { initReactI18next } from "react-i18next";
 
 import translationsInEnglish from './locales/en/translation.json';
 import translationsInPortuguese from './locales/pt/translation.json';
+import { useEffect } from "react";
 
 const resources = {
-  en: {
+  "en-US": {
     translation: translationsInEnglish
   },
-  pt: {
+  "pt-BR": {
     translation: translationsInPortuguese
   },
 };
@@ -18,8 +19,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "en",
-    fallbackLng: "pt",
+    lng: "en-US",
+    fallbackLng: "pt-BR",
     interpolation: {
       escapeValue: false
     },
