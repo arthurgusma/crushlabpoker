@@ -23,8 +23,8 @@ export default function LanguageSelector() {
 
     return (
         <div className="flex flags-container">
-           <Image alt="flag" src={BrasilFlag} className={`mx-1 cursor-pointer ${selectedLanguage !== "pt-BR" ? "grayscale" : "cursor-not-allowed"} hover:grayscale-0`}  height={30} onClick={() => chooseLanguage("pt-BR")} />
-           <Image alt="flag" src={EuaFlag} className={`mx-1 cursor-pointer ${selectedLanguage !== "en-US" ? "grayscale" : "cursor-not-allowed"}  hover:grayscale-0`}  height={30} onClick={() => chooseLanguage("en-US")} />
+           <Image alt="brazilian flag" src={BrasilFlag} className={`mx-1 cursor-pointer ${selectedLanguage !== "pt-BR" ? "grayscale" : "cursor-not-allowed"} hover:grayscale-0`}  height={30} onClick={() => chooseLanguage("pt-BR")} />
+           <Image alt="usa flag" src={EuaFlag} className={`mx-1 cursor-pointer ${selectedLanguage !== "en-US" ? "grayscale" : "cursor-not-allowed"}  hover:grayscale-0`}  height={30} onClick={() => chooseLanguage("en-US")} />
         </div>
       )
 };
