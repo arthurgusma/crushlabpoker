@@ -13,5 +13,10 @@
     "chart-options": {
         "select-position": "Select your position",
         "select-action": "Select your action"
+    },
+    "header": {
+        "home": "Home",
+        "profile": "Profile",
+        "about": "About"
     }
 }
