@@ -7,7 +7,7 @@ export default function Header() {
     const { t } = useTranslation();
 
     return (
-        <header className="flex justify-between items-center p-4 bg-main-green">
+        <header className="flex justify-between items-center py-4 px-20 bg-main-green">
             <h1 className="text-2xl text-main-gold">Crush Lab Poker</h1>
             <nav>
                 <ul className="flex">
