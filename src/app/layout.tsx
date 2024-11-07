@@ -25,7 +25,9 @@ export default function RootLayout({
         <body className={inter.className}>
             <I18nInitializer />
             <Header />
-            <UserProvider>{children}</UserProvider>
+            <div className="px-16">
+             <UserProvider>{children}</UserProvider>
+            </div>
         </body>
     </html>
   );
