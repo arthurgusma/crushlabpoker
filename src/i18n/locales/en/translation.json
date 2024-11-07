@@ -18,5 +18,11 @@
         "home": "Home",
         "profile": "Profile",
         "about": "About"
+    },
+    "aside": { 
+        "subscription": "Subscription",
+        "about": "About",
+        "help": "Help",
+        "logout": "Log-out"
     }
 }

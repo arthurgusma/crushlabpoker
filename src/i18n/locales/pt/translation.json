@@ -18,5 +18,11 @@
         "home": "Home",
         "profile": "Perfil",
         "about": "Sobre"
+    },
+    "aside": { 
+        "subscription": "Assinatura",
+        "about": "Sobre",
+        "help": "Ajuda",
+        "logout": "Sair"
     }
 }
