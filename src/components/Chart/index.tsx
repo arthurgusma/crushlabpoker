@@ -18,6 +18,7 @@ export const Chart: React.FC<ChartProps> = ({ range }) => {
   };
 
   return (
+    <>
     <table className="w-full border-collapse max-w-5xl">
       <tbody>
         {HAND_RANGES.map((row, rowIndex) => (
@@ -35,7 +36,8 @@ export const Chart: React.FC<ChartProps> = ({ range }) => {
           </tr>
         ))}
       </tbody>
-      <div className="hidden bg-chart-red bg-chart-blue bg-chart-green bg-chart-yellow bg-chart-orange bg-chart-purple bg-chart-light-blue"/>
     </table>
+    <div className="hidden bg-chart-red bg-chart-blue bg-chart-green bg-chart-yellow bg-chart-orange bg-chart-purple bg-chart-light-blue"/>
+    </>
   );
 };
