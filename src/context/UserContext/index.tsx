@@ -14,11 +14,11 @@ export function UserProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<ProvidedUserData>({} as ProvidedUserData); 
 
   useEffect(() => {
-    const sessionUser = JSON.parse(sessionStorage.getItem('user') || "{}");
+      const sessionUser = JSON.parse(localStorage.getItem('user') || "{}");
 
-    if (sessionUser && Object.keys(sessionUser).length > 0 && !user.uid) {
-      setUser(sessionUser.providerData[0]);
-    }
+      if (sessionUser && Object.keys(sessionUser).length > 0 && !user.uid) {
+        setUser(sessionUser);
+      }
   }, [user]);
 
   return (

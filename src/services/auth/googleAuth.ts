@@ -17,7 +17,11 @@ export const handleGoogleSignIn = async (): Promise<ProvidedUserData | undefined
       setCookieSession(uid, expiresAt);
 
      redirectHomeIfLoggedIn();
-     return user.providerData[0]; 
+     return {
+      uid: user?.uid,
+      displayName: user?.displayName,
+      photoURL: user?.photoURL,
+    }
     }
   } catch (error) {
     console.error('Error signing in with Google:', error);

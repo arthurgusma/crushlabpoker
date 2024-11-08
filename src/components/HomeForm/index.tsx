@@ -11,8 +11,10 @@ const HomeForm = () => {
     event.preventDefault();
     const user = await handleGoogleSignIn();
 
-    if (user)
+    if (user) {
+      localStorage.setItem('user', JSON.stringify(user));
       setUser(user);
+    }
   }
  
   return (
