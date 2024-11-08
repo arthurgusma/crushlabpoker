@@ -23,6 +23,7 @@ const config: Config = {
         gold: "#E2C28D",
         red: "#BF1A2F",
         champagne: "#F3E5CE",
+        brown: "#945F2C",
       },
       chart: {
         red: "#d00000",
