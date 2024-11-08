@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import i18n from '@/i18n';
-import BrasilFlag from "@/assets/brazil-flag.png";
-import EuaFlag from "@/assets/usa-flag.png";
+import BrasilFlag from "@/assets/cuntry-flags/brazil-flag.png";
+import EuaFlag from "@/assets/cuntry-flags/usa-flag.png";
 import Image from "next/image";
 
 export default function LanguageSelector() {
