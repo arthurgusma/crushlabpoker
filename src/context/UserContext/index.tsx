@@ -19,7 +19,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
       if (sessionUser && Object.keys(sessionUser).length > 0 && !user.uid) {
         setUser(sessionUser);
       }
-  }, [user]);
+  }, []);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
