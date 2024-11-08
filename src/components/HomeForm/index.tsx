@@ -1,19 +1,14 @@
 "use client";
 
-import { UserContext } from "@/context/UserContext";
 import { handleGoogleSignIn } from "@/services/auth/googleAuth";
-import { useContext } from "react";
 
 const HomeForm = () => {
-  const { setUser } = useContext(UserContext);
-
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const user = await handleGoogleSignIn();
 
     if (user) {
       localStorage.setItem('user', JSON.stringify(user));
-      setUser(user);
     }
   }
  
