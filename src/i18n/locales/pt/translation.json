@@ -24,5 +24,9 @@
         "about": "Sobre",
         "help": "Ajuda",
         "logout": "Sair"
+    },
+    "about-page": {
+        "title": "Sobre o Crush Lab Poker",
+        "content": "O Crush Lab Poker hoje oferece uma ferramenta que auxilia jogadores de poker a tomar melhores decisões no pré-flop, com base no GTO. A ferramenta hoje é voltada para o Cash Game e considera um stack médio de 100bb. Em breve, o Crush Lab vai oferecer uma experiência completa também para jogadores de torneio, considerando diferentes stacks para melhorar a tomada de decisão no pré-flop."
     }
 }

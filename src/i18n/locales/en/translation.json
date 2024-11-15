@@ -24,5 +24,9 @@
         "about": "About",
         "help": "Help",
         "logout": "Log-out"
+    },
+    "about-page": {
+        "title": "About Crush Lab Poker",
+        "content": "The Crush Lab Poker today offers a tool that helps poker players make better pre-flop decisions based on GTO. The tool is currently focused on Cash Games and considers an average stack of 100bb. Soon, Crush Lab will also offer a complete experience for tournament players, considering different stack sizes to improve pre-flop decision-making."
     }
 }
