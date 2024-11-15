@@ -7,11 +7,13 @@ import { handleSelection, handleSelectRange } from "./helpers";
 import ChartOptionsButton from "./ChartOptionsButton";
 import { Range } from "../Chart/types";
 import ColorDescription from "../ColorDescription";
+import { useTranslation } from "react-i18next";
 
 export default function ChartOptions() {
     const [selectedPosition, setSelectedPosition] = useState<string>("UTG");
     const [selectedAction, setSelectedAction] = useState<string>("RFI");
     const [range, setRange] = useState<Range>({} as Range);
+    const { t } = useTranslation();
     
     useEffect(() => {
         setRange(handleSelectRange(selectedPosition, selectedAction));
@@ -20,13 +22,13 @@ export default function ChartOptions() {
     return (
         <section className="flex">
             <div>
-                <h1 className="mb-2 text-main-gold">Selecione sua posição:</h1>
+                <h1 className="mb-2 text-main-gold">{t("chart-options.select-position")}</h1>
                 <section className="flex justify-between mb-4">
                 {TABLE_POSITIONS.map((position) => (
                 <ChartOptionsButton  key={position} position={position} selectedPosition={selectedPosition} setSelectedPosition={setSelectedPosition} handleBB={setSelectedAction} />
                 ))}
                 </section>
-                <h1 className="mb-2 text-main-gold">Selecione a ação:</h1>
+                <h1 className="mb-2 text-main-gold">{t("chart-options.select-action")}</h1>
                 <section className="flex justify-between mb-4">
                     {handleSelection(selectedPosition).map((action) => (
                         <ChartOptionsButton key={action} position={action} selectedPosition={selectedAction} setSelectedPosition={setSelectedAction} />
