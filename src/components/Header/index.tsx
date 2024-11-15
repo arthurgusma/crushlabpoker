@@ -1,6 +1,7 @@
 "use client";
 
 import LanguageSelector from "@/components/LanguageSelector";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 export default function Header() {
@@ -11,9 +12,9 @@ export default function Header() {
             <h1 className="text-2xl text-main-gold">Crush Lab Poker</h1>
             <nav>
                 <ul className="flex">
-                    <li className="mx-2"><a href="#" className="text-main-champagne">{t("header.home")}</a></li>
-                    <li className="mx-2"><a href="#" className="text-main-champagne">{t("header.about")}</a></li>
-                    <li className="mx-2"><a href="#" className="text-main-champagne">{t("header.profile")}</a></li>
+                    <Link className="mx-2 cursor-pointer" href="/home">{t("header.home")}</Link>
+                    <Link className="mx-2 cursor-pointer" href="/about">{t("header.about")}</Link>
+                    <Link className="mx-2 cursor-pointer" href="/profile">{t("header.profile")}</Link>
                     <li className="mx-2"><LanguageSelector /></li>
                 </ul>
             </nav>
