@@ -36,9 +36,9 @@ export default function Aside() {
         <aside>
             <Image src={photoSrc} alt="Profile Image" width={60} height={60} className="rounded-full"/>
             <ul className="mt-8">
-                <li><Link href="/subscription" >{t("aside.subscription")}</Link></li>
-                <li><Link href="/about" className="mb-2 cursor-pointer hover:text-main-gold">{t("aside.about")}</Link></li>
-                <li><Link href="/help" className="mb-2 cursor-pointer hover:text-main-gold">{t("aside.help")}</Link></li>
+                <li className="mb-2 cursor-pointer hover:text-main-gold"><Link href="/subscription">{t("aside.subscription")}</Link></li>
+                <li className="mb-2 cursor-pointer hover:text-main-gold"><Link href="/about">{t("aside.about")}</Link></li>
+                <li className="mb-2 cursor-pointer hover:text-main-gold"><Link href="/help">{t("aside.help")}</Link></li>
                 <li className="mb-2 cursor-pointer hover:text-main-gold">
                   <button type="button" onClick={handleLogOut}>
                     {t("aside.logout")} 
