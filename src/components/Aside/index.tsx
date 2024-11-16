@@ -6,13 +6,14 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
+import defaultLogo from "@/assets/profile-img/default.jpg"
 
 export default function Aside() {
     const { user } = useContext(UserContext);
     const router = useRouter();
 
     const { t } = useTranslation();
-    const photoSrc = user.photoURL || "";
+    const photoSrc = user.photoURL || defaultLogo;
 
     async function handleLogOut() {
         try {
