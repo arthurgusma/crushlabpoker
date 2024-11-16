@@ -13,7 +13,6 @@ export default function Header() {
                 <ul className="flex">
                     <Link className="mx-2 cursor-pointer" href="/home">{t("header.home")}</Link>
                     <Link className="mx-2 cursor-pointer" href="/about">{t("header.about")}</Link>
-                    <Link className="mx-2 cursor-pointer" href="/profile">{t("header.profile")}</Link>
                     <li className="mx-2"><LanguageSelector /></li>
                 </ul>
             </nav>
