@@ -11,8 +11,8 @@ export default function Header() {
         <header className="flex justify-between items-center py-4 px-16 bg-main-green">
             <nav className="ml-auto">
                 <ul className="flex">
-                    <Link className="mx-2 cursor-pointer hover:text-main-gold" href="/home">{t("header.home")}</Link>
-                    <Link className="mx-2 cursor-pointer hover:text-main-gold" href="/about">{t("header.about")}</Link>
+                    <li className="mx-2 cursor-pointer hover:text-main-gold"><Link href="/home">{t("header.home")}</Link></li>
+                    <li className="mx-2 cursor-pointer hover:text-main-gold"><Link href="/about">{t("header.about")}</Link></li>
                     <li className="mx-2"><LanguageSelector /></li>
                 </ul>
             </nav>
