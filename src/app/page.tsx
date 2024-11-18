@@ -10,7 +10,9 @@ export default async function LogIn() {
           <Image src={logo} alt="Crush Lab Poker Logo" width={800} height={800} />
         </div>
         <div className="w-6/12 flex items-center justify-center bg-main-champagne h-full">
-          <HomeForm />
+          <div>
+            <HomeForm />
+          </div>
         </div>
       </section>
     </main>
