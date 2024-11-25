@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       mode: 'subscription',
       return_url: `${origin}/api/confirm?session_id={CHECKOUT_SESSION_ID}`,
     });
-    return NextResponse.json({ sessionId: session.id });
+    return NextResponse.json({ clientSecret: session.client_secret });
   } catch (error) {
     console.log(error);
     return NextResponse.json({
