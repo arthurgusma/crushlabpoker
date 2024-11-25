@@ -15,7 +15,6 @@ export default function BillingPage() {
     const response = await fetch('/api/checkout_sessions', {
       method: 'POST',
     }).then(res => res.json());
-    console.log(response);
     return response.clientSecret;
   }, []);
 
