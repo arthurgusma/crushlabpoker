@@ -9,7 +9,7 @@ import {
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string);
 
-export default function App() {
+export default function BillingPage() {
 
   const fetchClientSecret = useCallback(async () => {
     const response = await fetch('/api/checkout_sessions', {

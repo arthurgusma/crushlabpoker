@@ -1,7 +1,7 @@
 import Aside from "@/components/Aside";
 import ChartOptions from "@/components/ChartOptions";
 
-export default async function Home() {
+export default async function HomePage() {
   return (
       <main className="flex px-20 py-16">
         <Aside />

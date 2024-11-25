@@ -2,7 +2,7 @@ import HomeForm from "@/components/HomeForm";
 import Image from "next/image";
 import logo from '@/assets/logo/full-logo.png'
 
-export default async function LogIn() {
+export default async function App() {
   return (
     <main className="flex flex-col items-center justify-between">
       <section className="flex items-center justify-between w-full" style={{ height: 'calc(100vh - 64px)' }}>
