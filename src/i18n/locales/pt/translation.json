@@ -43,9 +43,9 @@
         "email-error": "Por favor, insira um email válido",
         "password-error": "A senha deve ter no mínimo 8 caracteres",
         "confirm-password-error": "A senha deve ser igual",
-        "name-label": "Seu nome aqui",
-        "email-label": "Seu email aqui",
-        "password-label": "Sua senha aqui",
-        "confirm-password-label": "Confirme sua senha aqui"
+        "name-placeholder": "Seu nome aqui",
+        "email-placeholder": "Seu email aqui",
+        "password-placeholder": "Sua senha aqui",
+        "confirm-password-placeholder": "Confirme sua senha aqui"
     }
 }

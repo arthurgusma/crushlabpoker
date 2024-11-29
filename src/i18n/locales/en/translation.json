@@ -43,9 +43,9 @@
         "email-error": "Please, enter a valid email",
         "password-error": "Password must be at least 8 characters",
         "confirm-password-error": "Passwords must match",
-        "name-label": "Your name here",
-        "email-label": "Your email here",
-        "password-label": "Your password here",
-        "confirm-password-label": "Confirm your password here"
+        "name-placeholder": "Your name here",
+        "email-placeholder": "Your email here",
+        "password-placeholder": "Your password here",
+        "confirm-password-placeholder": "Confirm your password here"
     }
 }
