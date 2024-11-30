@@ -8,10 +8,10 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ error, ...rest }, ref) => {
     return (
-      <div className='grid pb-2 relative w-full'>
+      <div className='grid pt-2 relative w-full'>
         <label 
           htmlFor={rest.name} 
-          className="absolute left-3 top-1 text-main-brown text-sm"
+          className="absolute left-3 top-2 text-main-brown text-sm"
         >
           {rest.label}
         </label>
