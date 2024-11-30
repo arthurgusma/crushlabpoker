@@ -40,12 +40,9 @@
         "description-signup": "Already have an account?",
         "google": "Enter with Google",
         "name-error": "Please, enter your name",
+        "last-name-error": "Please, enter your last name",
         "email-error": "Please, enter a valid email",
         "password-error": "Password must be at least 8 characters",
-        "confirm-password-error": "Passwords must match",
-        "name-placeholder": "Your name here",
-        "email-placeholder": "Your email here",
-        "password-placeholder": "Your password here",
-        "confirm-password-placeholder": "Confirm your password here"
+        "confirm-password-error": "Passwords must match"
     }
 }

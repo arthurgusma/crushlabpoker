@@ -35,17 +35,14 @@
         "password": "Senha",
         "confirm-password": "Confirme a senha",
         "login": "Entrar",
-        "signup": "Criar conta",
+        "signup": "Criar Conta",
         "description-login": "Não tem uma conta?",
         "description-signup": "Já tem uma conta?",
         "google": "Entrar com o Google",
         "name-error": "Por favor, insira seu nome",
+        "last-name-error": "Por favor, insira seu sobrenome",
         "email-error": "Por favor, insira um email válido",
         "password-error": "A senha deve ter no mínimo 8 caracteres",
-        "confirm-password-error": "A senha deve ser igual",
-        "name-placeholder": "Seu nome aqui",
-        "email-placeholder": "Seu email aqui",
-        "password-placeholder": "Sua senha aqui",
-        "confirm-password-placeholder": "Confirme sua senha aqui"
+        "confirm-password-error": "A senha deve ser igual"
     }
 }
