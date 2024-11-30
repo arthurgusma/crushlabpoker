@@ -31,6 +31,7 @@
     },
     "login-form": {
         "name": "Name",
+        "last-name": "Last Name",
         "email": "Email",
         "password": "Password",
         "confirm-password": "Confirm Password",
