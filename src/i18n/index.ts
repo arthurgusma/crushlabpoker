@@ -19,7 +19,7 @@ i18n
   .init({
     resources,
     lng: localStorage.getItem('language') || "en-US",
-    fallbackLng: "us-EN",
+    fallbackLng: "pt-BR",
     interpolation: {
       escapeValue: false
     },
