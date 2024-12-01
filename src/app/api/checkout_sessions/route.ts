@@ -3,14 +3,15 @@ import Stripe from 'stripe';
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
 export async function POST(request: Request) {
-  const { headers } = request;
-  const origin = headers.get("origin");
+  const origin = request.headers.get('origin');
 
   if (!origin) {
     throw new Error("Request does not contain an origin header.");
   }
 
   try {
+    const body = await request.json();
+    const { language } = body; 
     const products = await stripe.products.list();
 
     const session = await stripe.checkout.sessions.create({
@@ -19,6 +20,7 @@ export async function POST(request: Request) {
          quantity: 1,
          price: product.default_price as string,
       })),
+      locale: language,
       mode: 'subscription',
       return_url: `${origin}/api/confirm?session_id={CHECKOUT_SESSION_ID}`,
     });
