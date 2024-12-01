@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./global.css";
 
-import I18nInitializer from '../i18n/initializer';
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,9 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en-US">
         <body className={inter.className}>
-            <I18nInitializer />
             <Header />
-             <UserProvider>{children}</UserProvider>
+            <UserProvider>{children}</UserProvider>
         </body>
     </html>
   );

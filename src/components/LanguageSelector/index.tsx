@@ -16,8 +16,10 @@ export default function LanguageSelector() {
     }
 
     useEffect(() => {
-        const storedLanguage = localStorage.getItem('language') || "en-US";
-        setSelectedLanguage(storedLanguage);
+        const storedLanguage = localStorage.getItem('language');
+        if (storedLanguage) {
+            chooseLanguage(storedLanguage);
+        }
     }, []);
 
     return (
