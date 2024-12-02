@@ -1,31 +1,31 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from 'react'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  error?: string;
-  label: string;
+  error?: string
+  label: string
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ error, ...rest }, ref) => {
     return (
-      <div className='grid pt-2 relative w-full'>
-        <label 
-          htmlFor={rest.name} 
+      <div className="grid pt-2 relative w-full">
+        <label
+          htmlFor={rest.name}
           className="absolute left-3 top-2 text-main-brown text-sm"
         >
           {rest.label}
         </label>
-        <input 
-          ref={ref} 
-          {...rest} 
-          className="peer w-full border-2 bg-gray-50 text-gray-900 focus:ring-1 focus:ring-main-brown px-3 pt-4 pb-2 rounded-md" 
+        <input
+          ref={ref}
+          {...rest}
+          className="peer w-full border-2 bg-gray-50 text-gray-900 focus:ring-1 focus:ring-main-brown px-3 pt-4 pb-2 rounded-md"
         />
         {error && <span>{error}</span>}
       </div>
-    );
-  }
-);
+    )
+  },
+)
 
-Input.displayName = "Input";
+Input.displayName = 'Input'
 
-export default Input;
+export default Input
