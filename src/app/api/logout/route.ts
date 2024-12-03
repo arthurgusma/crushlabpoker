@@ -1,3 +1,4 @@
+import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
@@ -8,7 +9,6 @@ export async function POST(request: Request) {
     throw new Error('Request does not contain an origin header.')
   }
 
-  const response = NextResponse.redirect(new URL('/', origin))
-  response.cookies.delete('session')
-  return response
+  cookies().set('session', '')
+  return NextResponse.json({ message: 'Logged out', status: 200 })
 }
