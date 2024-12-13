@@ -4,11 +4,12 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { ButtonSubmit } from '@/components/UI/Buttons'
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import Input from '@/components/UI/Input'
 import { useTranslation } from 'react-i18next'
 import SwitchForm from '../SwitchForm'
 import { signIn } from 'next-auth/react'
+import LoadingSpinner from '@/components/UI/LoadingSpinner'
 
 interface SignInProps {
   setIsSignUp: Dispatch<SetStateAction<boolean>>
@@ -16,6 +17,7 @@ interface SignInProps {
 }
 
 export default function SignIn({ setIsSignUp, isSignUp }: SignInProps) {
+  const [isLoading, setIsLoading] = useState(false)
   const { t } = useTranslation()
 
   const schema = z
@@ -49,6 +51,7 @@ export default function SignIn({ setIsSignUp, isSignUp }: SignInProps) {
 
   async function onSubmit(data: SigUpFormData) {
     try {
+      setIsLoading(true)
       const response = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -99,7 +102,9 @@ export default function SignIn({ setIsSignUp, isSignUp }: SignInProps) {
       />
 
       <div className="flex justify-center py-4">
-        <ButtonSubmit width="160">{t('login-form.signup')}</ButtonSubmit>
+        <ButtonSubmit width="160" disabled={isLoading}>
+          {isLoading ? <LoadingSpinner /> : t('login-form.signup')}
+        </ButtonSubmit>
       </div>
       <SwitchForm
         setIsSignUp={setIsSignUp}

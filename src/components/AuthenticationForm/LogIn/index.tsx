@@ -11,9 +11,11 @@ import { useTranslation } from 'react-i18next'
 import SwitchForm from '../SwitchForm'
 import i18n from '@/i18n'
 import { signIn } from 'next-auth/react'
+import LoadingSpinner from '@/components/UI/LoadingSpinner'
 
 export default function LoginPage() {
   const [isSignUp, setIsSignUp] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const { t } = useTranslation()
   const schema = z.object({
@@ -32,6 +34,7 @@ export default function LoginPage() {
   })
 
   async function onSubmit(data: LogInFormData) {
+    setIsLoading(true)
     signIn('credentials', {
       email: data.email,
       password: data.password,
@@ -68,7 +71,9 @@ export default function LoginPage() {
             />
 
             <div className="flex justify-center py-4">
-              <ButtonSubmit width="160">{t('login-form.login')}</ButtonSubmit>
+              <ButtonSubmit width="160" disabled={isLoading}>
+                {isLoading ? <LoadingSpinner /> : t('login-form.login')}
+              </ButtonSubmit>
             </div>
           </form>
           <SwitchForm
