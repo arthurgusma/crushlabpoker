@@ -3,34 +3,16 @@
 import { UserContext } from '@/context/UserContext'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import defaultLogo from '@/assets/profile-img/default.jpg'
+import { signOut } from 'next-auth/react'
 
 export default function Aside() {
   const { user } = useContext(UserContext)
-  const router = useRouter()
 
   const { t } = useTranslation()
   const photoSrc = user.photoURL || defaultLogo
-
-  async function handleLogOut() {
-    try {
-      const response = await fetch('/api/logout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-
-      if (response.ok) {
-        router.push('/')
-      }
-    } catch (error) {
-      console.error('An error occurred during logout:', error)
-    }
-  }
 
   return (
     <aside>
@@ -52,7 +34,7 @@ export default function Aside() {
           <Link href="/help">{t('aside.help')}</Link>
         </li>
         <li className="mb-2 cursor-pointer hover:text-main-gold">
-          <button type="button" onClick={handleLogOut}>
+          <button type="button" onClick={() => signOut()}>
             {t('aside.logout')}
           </button>
         </li>
