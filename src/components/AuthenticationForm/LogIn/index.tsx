@@ -10,6 +10,7 @@ import Input from '@/components/UI/Input'
 import { useTranslation } from 'react-i18next'
 import SwitchForm from '../SwitchForm'
 import i18n from '@/i18n'
+import { signIn } from 'next-auth/react'
 
 export default function LoginPage() {
   const [isSignUp, setIsSignUp] = useState(false)
@@ -31,19 +32,11 @@ export default function LoginPage() {
   })
 
   async function onSubmit(data: LogInFormData) {
-    const response = await fetch('/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
+    signIn('credentials', {
+      email: data.email,
+      password: data.password,
+      callbackUrl: '/home',
     })
-    console.log(response)
-    // TODO: Handle response
-
-    // if (response.ok) {
-    //     // router.push('/home')
-    // } else {
-    //     // Handle errors
-    // }
   }
 
   useEffect(() => {
@@ -79,14 +72,14 @@ export default function LoginPage() {
             </div>
           </form>
           <SwitchForm
-            setisSignUp={setIsSignUp}
+            setIsSignUp={setIsSignUp}
             isSignUp={isSignUp}
             buttonLabel={t('login-form.signup')}
             description={t('login-form.description-login')}
           />
         </>
       ) : (
-        <SignIn setisSignUp={setIsSignUp} isSignUp={isSignUp} />
+        <SignIn setIsSignUp={setIsSignUp} isSignUp={isSignUp} />
       )}
     </>
   )
