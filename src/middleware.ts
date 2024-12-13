@@ -7,10 +7,13 @@ export default async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname
   const isProtectedRoute = protectedRoutes.includes(path)
 
-  const cookieValue = (await cookies()).get('session')?.value
-  const cookie = cookieValue ? JSON.parse(cookieValue) : null
+  const sessionCookie = (await cookies()).get(
+    process.env.NEXT_PUBLIC_AMBIENT! === 'prod'
+      ? '__Secure-next-auth.session-token'
+      : 'next-auth.session-token',
+  )?.value
 
-  if (isProtectedRoute && (!cookie || !cookie.userId)) {
+  if (isProtectedRoute && !sessionCookie) {
     return NextResponse.redirect(new URL('/', req.nextUrl))
   }
 
