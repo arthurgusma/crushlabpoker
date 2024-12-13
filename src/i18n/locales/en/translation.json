@@ -32,6 +32,7 @@
     "login-form": {
         "name": "Name",
         "last-name": "Last Name",
+        "full-name": "Full Name",
         "email": "Email",
         "password": "Password",
         "confirm-password": "Confirm Password",
@@ -40,7 +41,7 @@
         "description-login": "Don't have an account?",
         "description-signup": "Already have an account?",
         "google": "Enter with Google",
-        "name-error": "Please, enter your name",
+        "name-error": "Please, enter your full name",
         "last-name-error": "Please, enter your last name",
         "email-error": "Please, enter a valid email",
         "password-error": "Password must be at least 8 characters",

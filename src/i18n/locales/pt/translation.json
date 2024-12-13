@@ -32,6 +32,7 @@
     "login-form": {
         "name": "Nome",
         "last-name": "Sobrenome",
+        "full-name": "Nome Completo",
         "email": "Email",
         "password": "Senha",
         "confirm-password": "Confirme a senha",
@@ -40,7 +41,7 @@
         "description-login": "Não tem uma conta?",
         "description-signup": "Já tem uma conta?",
         "google": "Entrar com o Google",
-        "name-error": "Por favor, insira seu nome",
+        "name-error": "Por favor, insira seu nome completo",
         "last-name-error": "Por favor, insira seu sobrenome",
         "email-error": "Por favor, insira um email válido",
         "password-error": "A senha deve ter no mínimo 8 caracteres",
