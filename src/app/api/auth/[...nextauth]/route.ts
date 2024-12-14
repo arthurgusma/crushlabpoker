@@ -2,7 +2,8 @@ import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '@/firebaseConfig'
+import { auth, db } from '@/firebaseConfig'
+import { doc, getDoc, setDoc } from 'firebase/firestore'
 
 const handler = NextAuth({
   session: {
@@ -52,6 +53,36 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
+    async signIn({ user }) {
+      try {
+        if (!user.email) {
+          throw new Error('User email is undefined')
+        }
+        const userRef = doc(db, 'users', user.id)
+
+        const userDoc = await getDoc(userRef)
+
+        if (!userDoc.exists()) {
+          await setDoc(userRef, {
+            displayName: user.name,
+            email: user.email,
+            lastLogin: new Date().toISOString(),
+            createdAt: new Date().toISOString(),
+            photoURL: user.image || '',
+            uid: user.id,
+          })
+        } else {
+          await setDoc(userRef, {
+            ...userDoc.data(),
+            lastLogin: new Date().toISOString(),
+          })
+        }
+      } catch (error) {
+        console.error('Error creating user:', error)
+        return false
+      }
+      return true
+    },
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id
