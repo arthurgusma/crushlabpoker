@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
 import { db, auth } from '@/firebaseConfig'
+import { FirebaseError } from 'firebase/app'
 
 export async function POST(req: Request) {
   try {
@@ -23,7 +24,7 @@ export async function POST(req: Request) {
 
     const userRef = doc(db, 'users', createdUser.uid)
     await setDoc(userRef, {
-      displayName: `${body.name} ${body.lastName}`,
+      displayName: body.fullName,
       email: createdUser.email,
       lastLogin: new Date().toISOString(),
       createdAt: new Date().toISOString(),
@@ -37,6 +38,15 @@ export async function POST(req: Request) {
     )
   } catch (error: unknown) {
     console.error('Error creating user:', error)
+    if (
+      error instanceof FirebaseError &&
+      error.code === 'auth/email-already-in-use'
+    ) {
+      return NextResponse.json(
+        { error: 'Email já cadastrado, entre com email e senha' },
+        { status: 403 },
+      )
+    }
     return NextResponse.json(
       {
         error: 'Internal Server Error',

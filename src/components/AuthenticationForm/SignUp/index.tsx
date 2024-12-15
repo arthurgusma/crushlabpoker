@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next'
 import SwitchForm from '../SwitchForm'
 import { signIn } from 'next-auth/react'
 import LoadingSpinner from '@/components/UI/LoadingSpinner'
+import ErrorMessage from '@/components/UI/ErrorMessage'
 
 interface SignInProps {
   setIsSignUp: Dispatch<SetStateAction<boolean>>
@@ -18,6 +19,7 @@ interface SignInProps {
 
 export default function SignIn({ setIsSignUp, isSignUp }: SignInProps) {
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const { t } = useTranslation()
 
   const schema = z
@@ -50,28 +52,31 @@ export default function SignIn({ setIsSignUp, isSignUp }: SignInProps) {
   })
 
   async function onSubmit(data: SigUpFormData) {
-    try {
-      setIsLoading(true)
-      const response = await fetch('/api/auth/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      })
-
-      if (response.ok) {
-        if (response.status === 201) {
+    setIsLoading(true)
+    await fetch('/api/auth/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (res.status === 403) {
+          throw new Error('Email já cadastrado, entre com email e senha.')
+        }
+        if (res.status === 201) {
           signIn('credentials', {
             email: data.email,
             password: data.password,
             callbackUrl: '/home',
           })
         }
-      } else {
-        console.error('Error submitting form:', response.statusText)
-      }
-    } catch (error) {
-      console.error('Error hashing password:', error)
-    }
+      })
+      .catch((error) => {
+        console.error('Error hashing password:', error)
+        setError(error?.message)
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
 
   return (
@@ -100,7 +105,7 @@ export default function SignIn({ setIsSignUp, isSignUp }: SignInProps) {
         label={t('login-form.confirm-password')}
         error={errors.confirmPassword?.message}
       />
-
+      {error && <ErrorMessage message={error} />}
       <div className="flex justify-center py-4">
         <ButtonSubmit width="160" disabled={isLoading}>
           {isLoading ? <LoadingSpinner /> : t('login-form.signup')}
