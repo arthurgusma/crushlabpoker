@@ -1,18 +1,17 @@
 'use client'
 
-import { UserContext } from '@/context/UserContext'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import defaultLogo from '@/assets/profile-img/default.jpg'
-import { signOut } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 
 export default function Aside() {
-  const { user } = useContext(UserContext)
+  const { data } = useSession()
+  const user = data?.user
 
   const { t } = useTranslation()
-  const photoSrc = user.photoURL || defaultLogo
+  const photoSrc = user?.image || defaultLogo
 
   return (
     <aside>
@@ -23,6 +22,7 @@ export default function Aside() {
         height={60}
         className="rounded-full"
       />
+      {user?.name && <p>Bem-vindo, {user?.name}!</p>}
       <ul className="mt-8">
         <li className="mb-2 cursor-pointer hover:text-main-gold">
           <Link href="/billing">{t('aside.subscription')}</Link>
