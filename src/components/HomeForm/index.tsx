@@ -13,11 +13,7 @@ const HomeForm = () => {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const user = await signIn('google', { callbackUrl: '/home' })
-
-    if (user) {
-      localStorage.setItem('user', JSON.stringify(user))
-    }
+    await signIn('google', { callbackUrl: '/home' })
   }
 
   useEffect(() => {
