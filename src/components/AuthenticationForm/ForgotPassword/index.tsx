@@ -66,7 +66,7 @@ export default function ForgotPassword({
           </div>
         )}
         <div className="mt-2 flex justify-center items-center h-full">
-          <ButtonSubmit width="170">
+          <ButtonSubmit width="170" disabled={isLoading}>
             {isLoading ? <LoadingSpinner /> : t('login-form.recover')}
           </ButtonSubmit>
         </div>
