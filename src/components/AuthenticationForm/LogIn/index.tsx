@@ -22,7 +22,6 @@ export enum FormType {
 
 export default function LoginPage() {
   const [formType, setFormType] = useState<FormType>(FormType.SIGNIN)
-  const [isForgotPassword, setIsForgotPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const { t } = useTranslation()
