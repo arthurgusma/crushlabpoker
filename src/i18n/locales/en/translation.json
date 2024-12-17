@@ -45,6 +45,10 @@
         "last-name-error": "Please, enter your last name",
         "email-error": "Please, enter a valid email",
         "password-error": "Password must be at least 8 characters",
-        "confirm-password-error": "Passwords must match"
+        "confirm-password-error": "Passwords must match",
+        "forgot-password": "Forgot your password?",
+        "recover": "Recover",
+        "recover-password": "Password recovery",
+        "recover-password-success": "An email has been sent to you with instructions."
     }
 }
