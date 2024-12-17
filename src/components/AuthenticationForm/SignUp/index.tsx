@@ -11,13 +11,14 @@ import SwitchForm from '../SwitchForm'
 import { signIn } from 'next-auth/react'
 import LoadingSpinner from '@/components/UI/LoadingSpinner'
 import ErrorMessage from '@/components/UI/ErrorMessage'
+import { FormType } from '../LogIn'
 
 interface SignInProps {
-  setIsSignUp: Dispatch<SetStateAction<boolean>>
-  isSignUp: boolean
+  setFormType: Dispatch<SetStateAction<FormType>>
+  formType: FormType
 }
 
-export default function SignIn({ setIsSignUp, isSignUp }: SignInProps) {
+export default function SignIn({ setFormType, formType }: SignInProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const { t } = useTranslation()
@@ -112,8 +113,8 @@ export default function SignIn({ setIsSignUp, isSignUp }: SignInProps) {
         </ButtonSubmit>
       </div>
       <SwitchForm
-        setIsSignUp={setIsSignUp}
-        isSignUp={isSignUp}
+        setFormType={setFormType}
+        formType={formType}
         buttonLabel={t('login-form.login')}
         description={t('login-form.description-signup')}
       />

@@ -12,9 +12,17 @@ import SwitchForm from '../SwitchForm'
 import i18n from '@/i18n'
 import { signIn } from 'next-auth/react'
 import LoadingSpinner from '@/components/UI/LoadingSpinner'
+import ForgotPassword from '../ForgotPassword'
+
+export enum FormType {
+  "SIGNIN",
+  "SIGNUP",
+  "FORGOT_PASSWORD",
+}
 
 export default function LoginPage() {
-  const [isSignUp, setIsSignUp] = useState(false)
+  const [formType, setFormType] = useState<FormType>(FormType.SIGNIN)
+  const [isForgotPassword, setIsForgotPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const { t } = useTranslation()
@@ -49,9 +57,9 @@ export default function LoginPage() {
     }
   }, [])
 
-  return (
-    <>
-      {!isSignUp ? (
+  switch (formType) {
+    case FormType.SIGNIN:
+      return (
         <>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -77,15 +85,16 @@ export default function LoginPage() {
             </div>
           </form>
           <SwitchForm
-            setIsSignUp={setIsSignUp}
-            isSignUp={isSignUp}
+            setFormType={setFormType}
+            formType={formType}
             buttonLabel={t('login-form.signup')}
             description={t('login-form.description-login')}
           />
         </>
-      ) : (
-        <SignIn setIsSignUp={setIsSignUp} isSignUp={isSignUp} />
-      )}
-    </>
-  )
+      )
+    case FormType.FORGOT_PASSWORD:
+      return <ForgotPassword setFormType={setFormType} />
+    case FormType.SIGNUP:
+      return <SignIn setFormType={setFormType} formType={formType} />
+  }
 }
