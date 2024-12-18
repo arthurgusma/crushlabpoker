@@ -30,3 +30,21 @@ export function ButtonText({ children, width, onClick, ...rest }: ButtonProps) {
     </button>
   )
 }
+
+export function ButtonSubscribe({
+  children,
+  width,
+  onClick,
+  ...rest
+}: ButtonProps) {
+  return (
+    <button
+      className="w-full py-2 rounded-lg text-white font-semibold mb-6 bg-main-green hover:opacity-80"
+      style={{ width: `${width}px` }}
+      onClick={onClick}
+      {...rest}
+    >
+      {children}
+    </button>
+  )
+}
