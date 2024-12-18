@@ -8,7 +8,7 @@ export default function Header() {
   const { t } = useTranslation()
 
   return (
-    <header className="flex justify-between items-center py-4 px-16 bg-main-green">
+    <header className="flex justify-between items-center py-4 px-16">
       <nav className="ml-auto">
         <ul className="flex">
           <li className="mx-2 cursor-pointer hover:text-main-gold">
