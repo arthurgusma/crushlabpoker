@@ -1,35 +1,11 @@
-'use client'
+import Pricing from '@/components/Pricing'
+import Stripe from 'stripe'
 
-import React, { useCallback } from 'react'
-import { loadStripe } from '@stripe/stripe-js'
-import {
-  EmbeddedCheckoutProvider,
-  EmbeddedCheckout,
-} from '@stripe/react-stripe-js'
-import i18n from '@/i18n'
+export default async function BillingPage() {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string,
-)
+  const { data } = await stripe.prices.list({ limit: 3 })
+  const activePrices = data.filter((price) => price.active)
 
-export default function BillingPage() {
-  const fetchClientSecret = useCallback(async () => {
-    const response = await fetch('/api/checkout_sessions', {
-      method: 'POST',
-      body: JSON.stringify({
-        language: i18n.language === 'en-US' ? 'en' : 'pt',
-      }),
-    }).then((res) => res.json())
-    return response.clientSecret
-  }, [])
-
-  const options = { fetchClientSecret }
-
-  return (
-    <div id="checkout">
-      <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
-        <EmbeddedCheckout />
-      </EmbeddedCheckoutProvider>
-    </div>
-  )
+  return <Pricing prices={activePrices} />
 }
