@@ -39,7 +39,7 @@ export function ButtonSubscribe({
 }: ButtonProps) {
   return (
     <button
-      className="w-full py-2 rounded-lg text-white font-semibold mb-6 bg-main-green hover:opacity-80"
+      className="w-full py-2 rounded-lg text-white font-semibold mb-6 bg-main-green hover:opacity-80 hover:text-main-champagne"
       style={{ width: `${width}px` }}
       onClick={onClick}
       {...rest}
