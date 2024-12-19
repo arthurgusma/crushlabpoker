@@ -11,17 +11,18 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json()
-    const { language } = body
-    const products = await stripe.products.list()
+    const { language, price, type } = body
 
     const session = await stripe.checkout.sessions.create({
       ui_mode: 'embedded',
-      line_items: products.data.map((product) => ({
-        quantity: 1,
-        price: product.default_price as string,
-      })),
+      line_items: [
+        {
+          quantity: 1,
+          price,
+        },
+      ],
       locale: language,
-      mode: 'subscription',
+      mode: type,
       return_url: `${origin}/api/confirm?session_id={CHECKOUT_SESSION_ID}`,
     })
     return NextResponse.json({ clientSecret: session.client_secret })
