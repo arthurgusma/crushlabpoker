@@ -50,5 +50,20 @@
         "recover": "Recuperar",
         "recover-password": "Recuperar senha",
         "recover-password-success": "Um email foi enviado para você com as instruções."
+    },
+    "subscription-page": {
+        "subscribe": "Assinatura Mensal",
+        "buy": "Compra Única",
+        "subscribe-recorring": "Por mês:",
+        "buy-recorring": "Uma vez:",
+        "description": "Acesso à estratégia pré-flop para micro e mid stakes cash games baseada no GTO.",
+        "subscribe-button": "Assinar",
+        "buy-button": "Comprar",
+        "features": [
+            "Acesso aos charts pré flop",
+            "Acesso a novas funcionalidades",
+            "Desconto em novos produtos/cursos",
+            "Acesso vitalício"
+        ]
     }
 }

@@ -50,5 +50,20 @@
         "recover": "Recover",
         "recover-password": "Password recovery",
         "recover-password-success": "An email has been sent to you with instructions."
+    },
+    "subscription-page": {
+        "subscribe": "Monthly Subscription",
+        "buy": "One-time Purchase",
+        "subscribe-recorring": "Per month:",
+        "buy-recorring": "One-time:",
+        "description": "Access to pre-flop strategy for micro and mid stakes cash games based on GTO.",
+        "subscribe-button": "Subscribe",
+        "buy-button": "Buy",
+        "features": [
+            "Access to pre-flop charts",
+            "Access to new features",
+            "discount on new products/courses",
+            "Lifetime access"
+        ]
     }
 }
