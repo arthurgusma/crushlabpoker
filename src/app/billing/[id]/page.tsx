@@ -21,7 +21,7 @@ export default function BillingPageStripe() {
   const type = planType === 'one_time' ? 'payment' : 'subscription'
 
   const fetchClientSecret = useCallback(async () => {
-    const response = await fetch('/api/checkout_sessions', {
+    const response = await fetch('/api/stripe/checkout_sessions', {
       method: 'POST',
       body: JSON.stringify({
         language: i18n.language === 'en-US' ? 'en' : 'pt',
