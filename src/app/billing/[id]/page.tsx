@@ -30,7 +30,7 @@ export default function BillingPageStripe() {
       }),
     }).then((res) => res.json())
     return response.clientSecret
-  }, [])
+  }, [priceId, type])
 
   const options = { fetchClientSecret }
 
