@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { doc, setDoc } from 'firebase/firestore'
-import { db, auth } from '@/firebaseConfig'
+import { auth } from '@/firebaseConfig'
 import { FirebaseError } from 'firebase/app'
+import prisma from '@/lib/prisma'
 
 export async function POST(req: Request) {
   try {
@@ -22,14 +22,13 @@ export async function POST(req: Request) {
 
     const createdUser = userCredential.user
 
-    const userRef = doc(db, 'users', createdUser.uid)
-    await setDoc(userRef, {
-      displayName: body.fullName,
-      email: createdUser.email,
-      lastLogin: new Date().toISOString(),
-      createdAt: new Date().toISOString(),
-      photoURL: createdUser.photoURL || '',
-      uid: createdUser.uid,
+    await prisma.user.create({
+      data: {
+        email: body.email,
+        id: createdUser.uid,
+        name: body.fullName,
+        photoURL: createdUser.photoURL || '',
+      },
     })
 
     return NextResponse.json(

@@ -2,8 +2,19 @@ import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth, db } from '@/firebaseConfig'
-import { doc, getDoc, setDoc } from 'firebase/firestore'
+import { auth } from '@/firebaseConfig'
+import prisma from '@/lib/prisma'
+
+declare module 'next-auth' {
+  interface Session {
+    user: {
+      id: string
+      name: string
+      email: string
+      image?: string | null
+    }
+  }
+}
 
 const handler = NextAuth({
   session: {
@@ -56,30 +67,16 @@ const handler = NextAuth({
   callbacks: {
     async signIn({ user }) {
       try {
-        if (!user.email) {
-          throw new Error('User email is undefined')
-        }
-        const userRef = doc(db, 'users', user.id)
-
-        const userDoc = await getDoc(userRef)
-
-        if (!userDoc.exists()) {
-          await setDoc(userRef, {
-            displayName: user.name,
-            email: user.email,
+        await prisma.user.update({
+          where: {
+            id: user.id,
+          },
+          data: {
             lastLogin: new Date().toISOString(),
-            createdAt: new Date().toISOString(),
-            photoURL: user.image || '',
-            uid: user.id,
-          })
-        } else {
-          await setDoc(userRef, {
-            ...userDoc.data(),
-            lastLogin: new Date().toISOString(),
-          })
-        }
+          },
+        })
       } catch (error) {
-        console.error('Error creating user:', error)
+        console.error('Error signin user:', error)
         return false
       }
       return true
@@ -89,8 +86,17 @@ const handler = NextAuth({
         token.id = user.id
         token.name = user.name
         token.email = user.email
+        token.image = user.image
       }
       return token
+    },
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.id = token.id as string
+        session.user.name = token.name as string
+        session.user.image = token.image as string
+      }
+      return session
     },
   },
 })
