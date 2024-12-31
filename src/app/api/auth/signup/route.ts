@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '@/firebaseConfig'
+import { auth } from '@/lib/firebaseConfig'
 import { FirebaseError } from 'firebase/app'
 import prisma from '@/lib/prisma'
 

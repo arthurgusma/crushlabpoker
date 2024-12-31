@@ -2,7 +2,7 @@ import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '@/firebaseConfig'
+import { auth } from '@/lib/firebaseConfig'
 import prisma from '@/lib/prisma'
 
 declare module 'next-auth' {
