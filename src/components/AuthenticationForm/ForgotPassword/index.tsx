@@ -16,9 +16,7 @@ type Props = {
   setFormType: Dispatch<SetStateAction<FormType>>
 }
 
-export default function ForgotPassword({
-  setFormType,
-}: Props) {
+export default function ForgotPassword({ setFormType }: Props) {
   const [isLoading, setIsLoading] = useState(false)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
   const { t } = useTranslation()
@@ -44,7 +42,7 @@ export default function ForgotPassword({
       await sendPasswordResetEmail(auth, data.email)
       setSuccessMessage(t('login-form.recover-password-success'))
     } catch (error) {
-      console.log(error)
+      console.error(error)
     } finally {
       setIsLoading(false)
     }
@@ -52,7 +50,7 @@ export default function ForgotPassword({
 
   return (
     <div>
-      <p className="text-main-brown">{t("login-form.recover-password")}</p>
+      <p className="text-main-brown">{t('login-form.recover-password')}</p>
       <form onSubmit={handleSubmit(handleForgotPassword)}>
         <Input
           type="email"
@@ -61,8 +59,10 @@ export default function ForgotPassword({
           error={errors.email?.message}
         />
         {successMessage && (
-          <div className='flex justify-center items-center text-main-light-green'>
-            <p className="text-center mt-2 max-w-44 text-sm">{successMessage}</p>
+          <div className="flex justify-center items-center text-main-light-green">
+            <p className="text-center mt-2 max-w-44 text-sm">
+              {successMessage}
+            </p>
           </div>
         )}
         <div className="mt-2 flex justify-center items-center h-full">

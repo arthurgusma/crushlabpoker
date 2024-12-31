@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     })
     return NextResponse.json({ clientSecret: session.client_secret })
   } catch (error) {
-    console.log(error)
+    console.error(error)
     return NextResponse.json({
       status: 500,
       statusText: 'Internal Server Error',
