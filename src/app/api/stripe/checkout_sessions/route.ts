@@ -23,7 +23,7 @@ export async function POST(request: Request) {
       ],
       locale: language,
       mode: type,
-      return_url: `${origin}/api/stripe/confirm?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: `${origin}/billing/confirm?session_id={CHECKOUT_SESSION_ID}`,
     })
     return NextResponse.json({ clientSecret: session.client_secret })
   } catch (error) {
