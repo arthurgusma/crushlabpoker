@@ -65,5 +65,9 @@
             "discount on new products/courses",
             "Lifetime access"
         ]
+    },
+    "payments": {
+        "success": "Payment successful",
+        "error": "Payment failed"
     }
 }

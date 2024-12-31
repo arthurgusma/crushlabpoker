@@ -65,5 +65,9 @@
             "Desconto em novos produtos/cursos",
             "Acesso vitalício"
         ]
+    },
+    "payments": {
+        "success": "Pagamento efetuado com sucesso",
+        "error": "Erro ao efetuar o pagamento"
     }
 }
