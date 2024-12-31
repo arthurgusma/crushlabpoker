@@ -17,20 +17,25 @@ export default function PaymentConfirmation({ sessionId }: Props) {
   const { t } = useTranslation()
 
   async function getPaymentStatus() {
-    try {
-      await fetch(`/api/stripe/payment_status?session_id=${sessionId}`)
-      toast(t('payments.success'), {
-        type: 'success',
-        autoClose: 2000,
+    await fetch(`/api/stripe/payment_status?session_id=${sessionId}`)
+      .then((res) => {
+        if (res.status === 200) {
+          toast(t('payments.success'), {
+            type: 'success',
+            autoClose: 2000,
+          })
+        }
       })
-      router.push('/home')
-    } catch (error) {
-      toast(t('payments.error'), {
-        type: 'error',
-        autoClose: 2000,
+      .catch((error) => {
+        toast(t('payments.error'), {
+          type: 'error',
+          autoClose: 2000,
+        })
+        console.error('Error processing request:', error)
       })
-      console.error('Error processing request:', error)
-    }
+      .finally(() => {
+        router.push('/home')
+      })
   }
 
   useEffect(() => {

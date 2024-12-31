@@ -1,5 +1,5 @@
 import prisma from '@/lib/prisma'
-import { Purchase } from '@prisma/client'
+import { Prisma, Purchase } from '@prisma/client'
 import { getToken } from 'next-auth/jwt'
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
@@ -11,20 +11,24 @@ export async function GET(request: NextRequest) {
   const sessionId = searchParams.get('session_id')
 
   if (!sessionId) {
-    return NextResponse.json({
-      status: 400,
-      statusText: 'Missing session_id in query parameters.',
-    })
+    return NextResponse.json(
+      {
+        statusText: 'Missing session_id in query parameters.',
+      },
+      { status: 400 },
+    )
   }
 
   try {
     const session = await stripe.checkout.sessions.retrieve(sessionId)
 
     if (!session) {
-      return NextResponse.json({
-        status: 404,
-        statusText: 'Session not found.',
-      })
+      return NextResponse.json(
+        {
+          statusText: 'Session not found.',
+        },
+        { status: 401 },
+      )
     }
 
     const subscriptionData: Omit<Purchase, 'userId'> = {
@@ -41,22 +45,42 @@ export async function GET(request: NextRequest) {
     if (!token?.id || typeof token.id !== 'string')
       throw new Error('User not found')
 
-    await prisma.purchase.create({
+    const responsePrisma = await prisma.purchase.create({
       data: {
         userId: token.id as string,
         ...subscriptionData,
       },
     })
 
-    return NextResponse.json({
-      status: 200,
-      statusText: 'Payment session retrieved and user updated successfully.',
-    })
+    console.log(responsePrisma)
+
+    return NextResponse.json(
+      {
+        statusText: 'Payment session retrieved and user updated successfully.',
+      },
+      {
+        status: 200,
+      },
+    )
   } catch (error) {
     console.error('Error processing request:', error)
-    return NextResponse.json({
-      status: 500,
-      statusText: 'Failed to process request.',
-    })
+
+    if (
+      error instanceof Prisma.PrismaClientKnownRequestError &&
+      error.code === 'P2002'
+    ) {
+      return NextResponse.json(
+        {
+          statusText: 'Payment already saved.',
+        },
+        { status: 208 },
+      )
+    }
+    return NextResponse.json(
+      {
+        statusText: 'Failed to process request.',
+      },
+      { status: 500 },
+    )
   }
 }
