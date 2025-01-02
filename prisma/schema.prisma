@@ -28,5 +28,6 @@ model Purchase {
   user          User     @relation(fields: [userId], references: [id])
   userId        String
   mode          String
+  active        Boolean
   createdAt     DateTime @default(now())
 }

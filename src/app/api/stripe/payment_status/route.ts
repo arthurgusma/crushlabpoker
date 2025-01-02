@@ -35,6 +35,7 @@ export async function GET(request: NextRequest) {
       id: session.id,
       createdAt: new Date(session.created * 1000),
       mode: session.mode,
+      active: true,
     }
 
     const token = await getToken({
@@ -45,14 +46,12 @@ export async function GET(request: NextRequest) {
     if (!token?.id || typeof token.id !== 'string')
       throw new Error('User not found')
 
-    const responsePrisma = await prisma.purchase.create({
+    await prisma.purchase.create({
       data: {
         userId: token.id as string,
         ...subscriptionData,
       },
     })
-
-    console.log(responsePrisma)
 
     return NextResponse.json(
       {
