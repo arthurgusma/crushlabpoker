@@ -18,19 +18,19 @@ export const Chart: React.FC<ChartProps> = ({ range }) => {
     if (range.shoveVs4Bet?.includes(hand))
       return BACKGROUND_RANGE_COLORS.shoveVs4Bet
     if (range.call?.includes(hand)) return BACKGROUND_RANGE_COLORS.call
-    return 'bg-main-champagne'
+    return 'bg-main-champagne text-black'
   }
 
   return (
     <>
-      <table className="w-full border-collapse max-w-5xl">
+      <table className="w-full border-collapse max-w-5x">
         <tbody>
           {HAND_RANGES.map((row, rowIndex) => (
             <tr key={rowIndex}>
               {row.map((hand) => (
                 <td
                   key={hand}
-                  className={`w-12 h-12 border border-black p-2 text-center text-black ${handleGetHandColor(
+                  className={`w-12 h-12 border border-black p-2 text-cente ${handleGetHandColor(
                     hand,
                   )}`}
                 >

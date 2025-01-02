@@ -201,12 +201,12 @@ export const HAND_RANGES: string[][] = [
 export const TABLE_POSITIONS = ['UTG', 'HJ', 'CO', 'BTN', 'SB', 'BB']
 
 export const BACKGROUND_RANGE_COLORS: { [key in keyof Range]: string } = {
-  raiseFirstIn: 'bg-chart-green',
+  raiseFirstIn: 'bg-chart-green text-black',
   foldTo3Bet: 'bg-chart-red text-main-champagne',
-  call3Bet: 'bg-chart-green',
+  call3Bet: 'bg-chart-green text-black',
   fourBetAndFold: 'bg-chart-blue text-main-champagne',
-  fourBetAndCall: 'bg-chart-yellow',
-  threeBet: 'bg-chart-orange',
+  fourBetAndCall: 'bg-chart-yellow text-black',
+  threeBet: 'bg-chart-orange text-black',
   shoveVs4Bet: 'bg-chart-purple text-main-champagne',
-  call: 'bg-chart-light-blue',
+  call: 'bg-chart-light-blue text-black',
 }

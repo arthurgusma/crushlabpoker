@@ -17,7 +17,7 @@ export default function ColorDescription({ range }: ColorDescriptionProps) {
       return (
         <li
           key={action}
-          className={`${BACKGROUND_RANGE_COLORS[action as keyof Range]} p-2 m-2 min-w-32 text-black`}
+          className={`${BACKGROUND_RANGE_COLORS[action as keyof Range]} p-2 m-2 min-w-32`}
         >
           <span>{t(`actions.${action}`)}</span>
         </li>
