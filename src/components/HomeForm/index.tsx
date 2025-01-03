@@ -2,7 +2,7 @@
 
 import LogIn from '../AuthenticationForm/LogIn/index'
 import { ButtonSubmit } from '../UI/Buttons'
-import { useTranslation } from 'react-i18next'  
+import { useTranslation } from 'react-i18next'
 import { FcGoogle } from 'react-icons/fc'
 import { useEffect } from 'react'
 import i18n from '@/i18n'

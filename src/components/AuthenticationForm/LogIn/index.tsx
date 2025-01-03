@@ -13,16 +13,19 @@ import i18n from '@/i18n'
 import { signIn } from 'next-auth/react'
 import LoadingSpinner from '@/components/UI/LoadingSpinner'
 import ForgotPassword from '../ForgotPassword'
+import { useRouter } from 'next/navigation'
+import ErrorMessage from '@/components/UI/ErrorMessage'
 
 export enum FormType {
-  "SIGNIN",
-  "SIGNUP",
-  "FORGOT_PASSWORD",
+  'SIGNIN',
+  'SIGNUP',
+  'FORGOT_PASSWORD',
 }
 
 export default function LoginPage() {
   const [formType, setFormType] = useState<FormType>(FormType.SIGNIN)
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const { t } = useTranslation()
   const schema = z.object({
@@ -39,14 +42,27 @@ export default function LoginPage() {
     resolver: zodResolver(schema),
     reValidateMode: 'onChange',
   })
+  const router = useRouter()
 
   async function onSubmit(data: LogInFormData) {
-    setIsLoading(true)
-    signIn('credentials', {
-      email: data.email,
-      password: data.password,
-      callbackUrl: '/home',
-    })
+    setError(null)
+    try {
+      setIsLoading(true)
+      const result = await signIn('credentials', {
+        email: data.email,
+        password: data.password,
+        redirect: false,
+      })
+
+      if (!result?.ok) {
+        throw new Error('Sign in failed')
+      }
+      router.push('/home')
+    } catch (error) {
+      setError(t('login-form.invalid-credentials'))
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -76,7 +92,7 @@ export default function LoginPage() {
               label={t('login-form.password')}
               error={errors.password?.message}
             />
-
+            {error && <ErrorMessage message={error} />}
             <div className="flex justify-center py-4">
               <ButtonSubmit width="160" disabled={isLoading}>
                 {isLoading ? <LoadingSpinner /> : t('login-form.login')}
