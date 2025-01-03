@@ -31,9 +31,16 @@ export async function GET(request: NextRequest) {
       )
     }
 
+    const purchaseId = session?.payment_intent
+      ? (session.payment_intent as string)
+      : session?.subscription
+        ? (session.subscription as string)
+        : session.id
+
     const subscriptionData: Omit<Purchase, 'userId'> = {
-      id: session.id,
+      id: purchaseId,
       createdAt: new Date(session.created * 1000),
+      customer: (session?.customer as string) || null,
       mode: session.mode,
       active: true,
     }
