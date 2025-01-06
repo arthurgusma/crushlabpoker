@@ -76,7 +76,9 @@
         "status-canceled": "Inactive",
         "current-period-end": "Current period end:",
         "current-period-start": "Current period start:",
-        "cancel-subscription": "Cancel subscription"
+        "cancel-subscription": "Cancel subscription",
+         "header-subscription": "Subscription",
+        "header-purchase": "Purchase"
     },
     "payments": {
         "success": "Payment successful",

@@ -76,7 +76,9 @@
         "status-canceled": "Inativo",
         "current-period-end": "Fim do período atual:",
         "current-period-start": "Início do período atual:",
-        "cancel-subscription": "Cancelar assinatura"
+        "cancel-subscription": "Cancelar assinatura",
+        "header-subscription": "Assinatura",
+        "header-purchase": "Compra"
     },
     "payments": {
         "success": "Pagamento efetuado com sucesso",
