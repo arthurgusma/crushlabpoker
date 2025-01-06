@@ -48,3 +48,21 @@ export function ButtonSubscribe({
     </button>
   )
 }
+
+export function CancelSubscriptionButton({
+  children,
+  width,
+  onClick,
+  ...rest
+}: ButtonProps) {
+  return (
+    <button
+      onClick={onClick}
+      style={{ width: `${width}px` }}
+      {...rest}
+      className="w-full bg-main-red text-white py-2 rounded-lg hover:bg-red-600"
+    >
+      {children}
+    </button>
+  )
+}
