@@ -65,7 +65,18 @@
             "Acesso a novas funcionalidades",
             "Desconto em novos produtos/cursos",
             "Acesso vitalício"
-        ]
+        ],
+        "info": "Detalhes de assinatura/compra",
+        "status-purchase": "Status da compra:",
+        "status-subscription": "Status da assinatura:",
+        "purchase-date": "Data da compra:",
+        "cancel-purchase": "Cancelar compra",
+        "status-succeeded": "Sucesso",
+        "status-active": "Ativo",
+        "status-canceled": "Inativo",
+        "current-period-end": "Fim do período atual:",
+        "current-period-start": "Início do período atual:",
+        "cancel-subscription": "Cancelar assinatura"
     },
     "payments": {
         "success": "Pagamento efetuado com sucesso",

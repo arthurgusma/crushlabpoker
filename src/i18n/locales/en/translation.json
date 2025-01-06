@@ -65,7 +65,18 @@
             "Access to new features",
             "discount on new products/courses",
             "Lifetime access"
-        ]
+        ],
+        "info": "Subscription/purchase information",
+        "status-purchase": "Purchase status:",
+        "status-subscription": "Subscription status:",
+        "purchase-date": "Purchase date:",
+        "cancel-purchase": "Cancel purchase",
+        "status-succeeded": "Succeeded",
+        "status-active": "Active",
+        "status-canceled": "Inactive",
+        "current-period-end": "Current period end:",
+        "current-period-start": "Current period start:",
+        "cancel-subscription": "Cancel subscription"
     },
     "payments": {
         "success": "Payment successful",
