@@ -18,7 +18,7 @@ const config: Config = {
     colors: {
       ...colors,
       main: {
-        'dark-green': '#060E0B',
+        'dark-green': '#19372d',
         'light-green': '#1E4135',
         gold: '#E2C28D',
         red: '#BF1A2F',
