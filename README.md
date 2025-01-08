@@ -70,7 +70,7 @@ Ensure you have the following installed:
 
 4. Run the development server:
    ```bash
-   yarn dev
+   npm run dev
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
