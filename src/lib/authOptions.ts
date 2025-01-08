@@ -14,6 +14,12 @@ declare module 'next-auth' {
       image?: string | null
     }
   }
+  interface User {
+    id: string
+    name: string
+    email: string
+    image?: string | null
+  }
 }
 
 export const authOptions: NextAuthOptions = {
@@ -49,7 +55,7 @@ export const authOptions: NextAuthOptions = {
 
           return {
             id: user.uid,
-            email: user.email,
+            email: user.email ?? '',
             name: user.displayName,
             image: user.photoURL,
           }
@@ -67,14 +73,30 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ user }) {
       try {
-        await prisma.user.update({
-          where: {
-            id: user.id,
-          },
-          data: {
-            lastLogin: new Date().toISOString(),
-          },
+        // try to find user in database
+        // if no user is found, create a new user
+        // if user is found, update lastLogin
+        const existingUser = await prisma.user.findUnique({
+          where: { email: user.email },
         })
+
+        if (!existingUser) {
+          await prisma.user.create({
+            data: {
+              email: user.email,
+              name: user.name,
+              photoURL: user.image ?? '',
+              id: user.id,
+              createdAt: new Date(),
+              lastLogin: new Date(),
+            },
+          })
+        } else {
+          await prisma.user.update({
+            where: { email: user.email },
+            data: { lastLogin: new Date() },
+          })
+        }
       } catch (error) {
         console.error('Error signing user in:', error)
         return false
