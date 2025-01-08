@@ -6,6 +6,8 @@ import SubscriptionPageData from '@/components/SubscriptionPageData'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 
+export const dynamic = 'force-dynamic'
+
 export default async function BillingPage() {
   const subscription = await getUserSubscription()
 
