@@ -1,20 +1,28 @@
 'use client'
+
 import PaymentConfirmation from '@/components/PaymentConfirmation'
 import LoadingSpinner from '@/components/UI/LoadingSpinner'
 import { SessionProvider } from 'next-auth/react'
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 
-export default function ConfirmPage() {
+function ConfirmContent() {
   const searchParams = useSearchParams()
   const sessionId = searchParams.get('session_id')
 
+  return sessionId ? (
+    <PaymentConfirmation sessionId={sessionId} />
+  ) : (
+    <LoadingSpinner />
+  )
+}
+
+export default function ConfirmPage() {
   return (
     <SessionProvider>
-      {sessionId ? (
-        <PaymentConfirmation sessionId={sessionId} />
-      ) : (
-        <LoadingSpinner />
-      )}
+      <Suspense fallback={<LoadingSpinner />}>
+        <ConfirmContent />
+      </Suspense>
     </SessionProvider>
   )
 }
