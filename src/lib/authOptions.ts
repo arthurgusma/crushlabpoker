@@ -56,7 +56,7 @@ export const authOptions: NextAuthOptions = {
           return {
             id: user.uid,
             email: user.email ?? '',
-            name: user.displayName,
+            name: user.displayName ?? '',
             image: user.photoURL,
           }
         } catch (error) {
