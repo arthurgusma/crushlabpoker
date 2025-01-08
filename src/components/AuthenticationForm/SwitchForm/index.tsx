@@ -20,12 +20,18 @@ export default function SwitchForm({
     <>
       <div className="flex justify-center text-main-light-green">
         <p className="mr-1 p-0">{description}</p>
-        <ButtonText onClick={() => setFormType(formType === FormType.SIGNIN ? FormType.SIGNUP : FormType.SIGNIN)}>
+        <ButtonText
+          onClick={() =>
+            setFormType(
+              formType === FormType.SIGNIN ? FormType.SIGNUP : FormType.SIGNIN,
+            )
+          }
+        >
           {buttonLabel}
         </ButtonText>
       </div>
-      <div className='flex justify-center items-center text-xs'>
-        <ButtonText onClick={() =>  setFormType(FormType.FORGOT_PASSWORD)}>
+      <div className="flex justify-center items-center text-xs">
+        <ButtonText onClick={() => setFormType(FormType.FORGOT_PASSWORD)}>
           {t('login-form.forgot-password').toUpperCase()}
         </ButtonText>
       </div>
