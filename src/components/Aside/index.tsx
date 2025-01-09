@@ -30,9 +30,6 @@ export default function Aside() {
           <Link href="/about">{t('aside.about')}</Link>
         </li>
         <li className="mb-2 cursor-pointer hover:text-main-gold">
-          <Link href="/help">{t('aside.help')}</Link>
-        </li>
-        <li className="mb-2 cursor-pointer hover:text-main-gold">
           <button type="button" onClick={() => signOut()}>
             {t('aside.logout')}
           </button>
