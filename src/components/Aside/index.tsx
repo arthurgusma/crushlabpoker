@@ -20,7 +20,7 @@ export default function Aside() {
         alt="Profile Image"
         width={60}
         height={60}
-        className="rounded-full w-10 h-10 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
+        className="rounded-full w-10 h-10 sm:w-20 sm:h-20 md:w-20 md:h-20"
       />
       <ul className="md:mt-8 mt-2 max-md:mr-4 max-md:space-x-4 max-md:flex justify-end ml-auto">
         <li className="mb-2 cursor-pointer hover:text-main-gold">
