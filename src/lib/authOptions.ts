@@ -73,9 +73,6 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ user }) {
       try {
-        // try to find user in database
-        // if no user is found, create a new user
-        // if user is found, update lastLogin
         const existingUser = await prisma.user.findUnique({
           where: { email: user.email },
         })
