@@ -83,5 +83,16 @@
     "payments": {
         "success": "Payment successful",
         "error": "Payment failed"
+    },
+    "contact-us": {
+        "title": "Contact Us",
+        "name": "Name",
+        "send": "Send",
+        "message": "Message",
+        "alert": {
+            "success": "Message sent successfully!",
+            "error": "Error sending message.",
+            "response": "Response time is up to 72 hours."
+        }
     }
 }

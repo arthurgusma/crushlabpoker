@@ -4,6 +4,7 @@ import './global.css'
 
 import Header from '@/components/Header'
 import { ToastContainer } from 'react-toastify'
+import ContactUs from '@/components/ContactUs'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Header />
         {children}
         <ToastContainer />
+        <ContactUs />
       </body>
     </html>
   )

@@ -83,5 +83,16 @@
     "payments": {
         "success": "Pagamento efetuado com sucesso",
         "error": "Erro ao efetuar o pagamento"
+    },
+    "contact-us": {
+        "title": "Contate-nos",
+        "name": "Nome",
+        "message": "Mensagem",
+        "send": "Enviar",
+        "alert": {
+            "success": "Mensagem enviada com sucesso!",
+            "error": "Erro ao enviar mensagem.",
+            "response": "O tempo de resposta é de até 72 horas."
+        }
     }
 }
