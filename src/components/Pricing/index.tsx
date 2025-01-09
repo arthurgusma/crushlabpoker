@@ -24,7 +24,7 @@ export default function Pricing({ prices }: Props) {
   })
 
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center gap-6 p-6 h-screen -mt-16">
+    <div className="flex flex-col md:flex-row justify-center items-center gap-6 p-6 h-screen max-sm:mt-32">
       {prices.map((price) => (
         <PricingCard
           key={price.id}

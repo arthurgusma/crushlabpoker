@@ -17,7 +17,7 @@ export default function ColorDescription({ range }: ColorDescriptionProps) {
       return (
         <li
           key={action}
-          className={`${BACKGROUND_RANGE_COLORS[action as keyof Range]} p-2 m-2 min-w-32`}
+          className={`${BACKGROUND_RANGE_COLORS[action as keyof Range]} p-2 min-w-20 max-sm:m-1 flex items-center justify-center rounded-md`}
         >
           <span>{t(`actions.${action}`)}</span>
         </li>
@@ -26,9 +26,11 @@ export default function ColorDescription({ range }: ColorDescriptionProps) {
   }
 
   return (
-    <section className="p-4 mt-40 text-center">
+    <div className="mb-4">
       <h2 className="text-lg text-main-gold">{t('actions.label')}</h2>
-      <ul className="text-sm">{handleGetColorDescription(range)}</ul>
-    </section>
+      <ul className="max-sm:text-sm flex justify-between">
+        {handleGetColorDescription(range)}
+      </ul>
+    </div>
   )
 }

@@ -7,9 +7,9 @@ export default function AboutPage() {
   const { t } = useTranslation()
 
   return (
-    <main className="m-16">
+    <main className="md:m-16">
       <section className="flex justify-center">
-        <div className="w-1/2">
+        <div className="md:w-1/2 max-sm:mx-4">
           <h1 className="text-main-gold font-thin text-5xl mb-2">
             {t('about-page.title')}
           </h1>

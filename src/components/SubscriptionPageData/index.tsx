@@ -15,7 +15,7 @@ export default function SubscriptionPageData({ subscription }: Props) {
   const { t } = useTranslation()
 
   return (
-    <main className="flex px-20 py-16">
+    <main className="md:flex px-6 md:px-20 py-16">
       <SessionProvider>
         <Aside />
       </SessionProvider>

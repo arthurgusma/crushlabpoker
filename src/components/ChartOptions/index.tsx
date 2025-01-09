@@ -20,12 +20,12 @@ export default function ChartOptions() {
   }, [selectedPosition, selectedAction])
 
   return (
-    <section className="flex">
+    <section>
       <div>
-        <h1 className="mb-2 text-main-gold">
+        <h1 className="mb-2 text-main-gold w-fit">
           {t('chart-options.select-position')}
         </h1>
-        <section className="flex justify-between mb-4">
+        <section className="flex justify-between mb-4 max-sm:grid grid-cols-3 gap-1 max-sm:w-fit">
           {TABLE_POSITIONS.map((position) => (
             <ChartOptionsButton
               key={position}
@@ -36,10 +36,10 @@ export default function ChartOptions() {
             />
           ))}
         </section>
-        <h1 className="mb-2 text-main-gold">
+        <h1 className="mb-2 text-main-gold w-fit">
           {t('chart-options.select-action')}
         </h1>
-        <section className="flex justify-between mb-4">
+        <section className="flex justify-between mb-4 max-sm:w-fit max-sm:grid grid-cols-3 gap-1">
           {handleSelection(selectedPosition).map((action) => (
             <ChartOptionsButton
               key={action}
@@ -49,11 +49,9 @@ export default function ChartOptions() {
             />
           ))}
         </section>
+        <ColorDescription range={range} />
         <Chart range={range} />
       </div>
-      <aside>
-        <ColorDescription range={range} />
-      </aside>
     </section>
   )
 }

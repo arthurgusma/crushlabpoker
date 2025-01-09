@@ -22,15 +22,15 @@ export const Chart: React.FC<ChartProps> = ({ range }) => {
   }
 
   return (
-    <>
-      <table className="w-full border-collapse max-w-5x">
+    <div className="w-full overflow-auto">
+      <table className="w-full max-w-full border-collapse">
         <tbody>
           {HAND_RANGES.map((row, rowIndex) => (
             <tr key={rowIndex}>
               {row.map((hand) => (
                 <td
                   key={hand}
-                  className={`w-12 h-12 border border-black p-2 text-cente ${handleGetHandColor(
+                  className={`border border-black sm:p-1 text-center max-sm:text-sm sm:w-10 sm:h-10 md:w-10 md:h-10 ${handleGetHandColor(
                     hand,
                   )}`}
                 >
@@ -42,6 +42,6 @@ export const Chart: React.FC<ChartProps> = ({ range }) => {
         </tbody>
       </table>
       <div className="hidden bg-chart-red bg-chart-blue bg-chart-green bg-chart-yellow bg-chart-orange bg-chart-purple bg-chart-light-blue" />
-    </>
+    </div>
   )
 }
