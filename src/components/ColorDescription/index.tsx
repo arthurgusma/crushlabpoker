@@ -28,7 +28,7 @@ export default function ColorDescription({ range }: ColorDescriptionProps) {
   return (
     <div className="mb-4">
       <h2 className="text-lg text-main-gold">{t('actions.label')}</h2>
-      <ul className="max-sm:text-sm flex justify-between">
+      <ul className="max-sm:text-sm flex gap-x-4 max-sm:gap-x-0.5 flex-wrap">
         {handleGetColorDescription(range)}
       </ul>
     </div>

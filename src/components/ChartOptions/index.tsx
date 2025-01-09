@@ -25,7 +25,7 @@ export default function ChartOptions() {
         <h1 className="mb-2 text-main-gold w-fit">
           {t('chart-options.select-position')}
         </h1>
-        <section className="flex justify-between mb-4 max-sm:grid grid-cols-3 gap-1 max-sm:w-fit">
+        <section className="flex justify-between mb-4 max-sm:grid grid-cols-3 gap-1 max-sm:gap-x-10 max-sm:w-fit">
           {TABLE_POSITIONS.map((position) => (
             <ChartOptionsButton
               key={position}
@@ -39,7 +39,7 @@ export default function ChartOptions() {
         <h1 className="mb-2 text-main-gold w-fit">
           {t('chart-options.select-action')}
         </h1>
-        <section className="flex justify-between mb-4 max-sm:w-fit max-sm:grid grid-cols-3 gap-1">
+        <section className="flex justify-between mb-4 max-sm:w-fit max-sm:grid grid-cols-3 gap-1 max-sm:gap-x-10">
           {handleSelection(selectedPosition).map((action) => (
             <ChartOptionsButton
               key={action}
