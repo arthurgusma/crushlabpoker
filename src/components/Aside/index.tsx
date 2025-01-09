@@ -14,7 +14,7 @@ export default function Aside() {
   const photoSrc = user?.image || defaultLogo
 
   return (
-    <aside>
+    <aside className="max-md:flex max-md:flex-row-reverse max-md:justify-end max-md:items-center max-md:mb-4">
       <Image
         src={photoSrc}
         alt="Profile Image"
@@ -22,8 +22,7 @@ export default function Aside() {
         height={60}
         className="rounded-full"
       />
-      {user?.name && <p>Bem-vindo, {user?.name}!</p>}
-      <ul className="mt-8">
+      <ul className="md:mt-8 mt-2 max-md:mr-4 max-md:space-x-4 max-md:flex justify-end ml-auto">
         <li className="mb-2 cursor-pointer hover:text-main-gold">
           <Link href="/billing">{t('aside.subscription')}</Link>
         </li>

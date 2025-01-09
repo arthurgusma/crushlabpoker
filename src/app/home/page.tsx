@@ -6,7 +6,7 @@ import { SessionProvider } from 'next-auth/react'
 
 export default function HomePage() {
   return (
-    <main className="flex px-20 py-16">
+    <main className="md:flex md:px-20 px-5 max-sm:px-3 py-16 max-sm:py-4">
       <SessionProvider>
         <Aside />
         <div className="flex place-items-center justify-around w-full">
