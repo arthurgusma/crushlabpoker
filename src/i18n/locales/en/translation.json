@@ -94,5 +94,9 @@
             "error": "Error sending message.",
             "response": "Response time is up to 72 hours."
         }
+    },
+    "no-subscriber": {
+        "subscribe": "Subscribe",
+        "description": "to have access to all features."
     }
 }

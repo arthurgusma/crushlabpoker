@@ -94,5 +94,9 @@
             "error": "Erro ao enviar mensagem.",
             "response": "O tempo de resposta é de até 72 horas."
         }
+    },
+    "no-subscriber": {
+        "subscribe": "Assine",
+        "description": "para liberar o acesso a todas as funcionalidades."
     }
 }
