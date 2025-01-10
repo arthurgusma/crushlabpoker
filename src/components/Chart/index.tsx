@@ -22,7 +22,7 @@ export const Chart: React.FC<ChartProps> = ({ range }) => {
   }
 
   return (
-    <div className="w-full overflow-auto">
+    <div className="w-full overflow-auto max-sm:mb-14">
       <table className="w-full max-w-full border-collapse">
         <tbody>
           {HAND_RANGES.map((row, rowIndex) => (

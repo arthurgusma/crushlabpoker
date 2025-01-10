@@ -53,7 +53,7 @@ export default function ContactUs() {
           onClick={toggleChat}
           className="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600"
         >
-          💬 {t('contact-us.title')}
+          💬
         </button>
       )}
 
