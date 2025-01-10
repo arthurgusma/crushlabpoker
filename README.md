@@ -6,6 +6,10 @@
 
 Crush Lab Poker is a web application designed to help poker players make better decisions during gameplay by providing easy-to-read poker charts. These charts are tailored for various game situations, helping players quickly determine optimal responses based on their position and the actions they are facing or taking.
 
+## Project
+
+Check out the live project at [Crush Lab Poker](https://crushlabpoker.com).
+
 ### Target Audience
 - **Beginners**: Players who are new to poker and need guidance.
 - **Enthusiasts**: Hobbyists looking to improve their skills.
