@@ -46,16 +46,11 @@ export default function LoginPage() {
     setError(null)
     try {
       setIsLoading(true)
-      const response = await signIn('credentials', {
+      await signIn('credentials', {
         email: data.email,
         password: data.password,
         callbackUrl: '/home',
       })
-
-      if (!response || !response.ok) {
-        setError(t('login-form.invalid-credentials'))
-        throw new Error(response?.error || 'Sign-in failed')
-      }
     } catch (error) {
       setError(t('login-form.invalid-credentials'))
       console.log(error)
