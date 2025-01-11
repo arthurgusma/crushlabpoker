@@ -10,7 +10,7 @@ import { Input } from '@/components/UI/Input'
 import { useTranslation } from 'react-i18next'
 import SwitchForm from '../SwitchForm'
 import i18n from '@/i18n'
-import { signIn } from 'next-auth/react'
+import { getSession, signIn } from 'next-auth/react'
 import LoadingSpinner from '@/components/UI/LoadingSpinner'
 import ForgotPassword from '../ForgotPassword'
 import ErrorMessage from '@/components/UI/ErrorMessage'
@@ -60,7 +60,8 @@ export default function LoginPage() {
         throw new Error(response?.error || 'Sign-in failed')
       }
 
-      await new Promise((resolve) => setTimeout(resolve, 5000))
+      const res = await getSession()
+      console.log(res)
 
       router.push('/home')
     } catch (error) {
