@@ -57,6 +57,7 @@ export default function LoginPage() {
         localStorage.setItem('loginError', errorMessage)
         throw new Error('Sign in failed')
       }
+      localStorage.removeItem('loginError')
     } catch (error) {
       console.log(error)
       setError(t('login-form.invalid-credentials'))
