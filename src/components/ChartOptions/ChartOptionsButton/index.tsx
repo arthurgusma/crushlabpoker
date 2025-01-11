@@ -26,7 +26,7 @@ export default function ChartOptionsButton({
       key={position}
       className={`font-bold p-1 rounded w-24 text-main-light-green hover:opacity-75 ${
         selectedPosition === position ? 'bg-chart-green' : 'bg-main-gold'
-      }`}
+      } max-h-8`}
       onClick={() => handleSelection(position)}
     >
       {position}
