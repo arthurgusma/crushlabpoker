@@ -15,7 +15,6 @@ import LoadingSpinner from '@/components/UI/LoadingSpinner'
 import ForgotPassword from '../ForgotPassword'
 import { useRouter } from 'next/navigation'
 import ErrorMessage from '@/components/UI/ErrorMessage'
-import { toast } from 'react-toastify'
 
 export enum FormType {
   'SIGNIN',
