@@ -13,7 +13,6 @@ import i18n from '@/i18n'
 import { signIn } from 'next-auth/react'
 import LoadingSpinner from '@/components/UI/LoadingSpinner'
 import ForgotPassword from '../ForgotPassword'
-import { useRouter } from 'next/navigation'
 import ErrorMessage from '@/components/UI/ErrorMessage'
 
 export enum FormType {
@@ -42,7 +41,6 @@ export default function LoginPage() {
     resolver: zodResolver(schema),
     reValidateMode: 'onChange',
   })
-  const router = useRouter()
 
   async function onSubmit(data: LogInFormData) {
     setError(null)
@@ -51,16 +49,17 @@ export default function LoginPage() {
       const result = await signIn('credentials', {
         email: data.email,
         password: data.password,
-        redirect: false,
+        callbackUrl: '/home',
       })
 
       if (!result?.ok) {
+        const errorMessage = t('login-form.invalid-credentials')
+        localStorage.setItem('loginError', errorMessage)
         throw new Error('Sign in failed')
       }
-      setTimeout(() => {
-        router.push('/home')
-      }, 1000)
+      localStorage.removeItem('loginError')
     } catch (error) {
+      console.log(error)
       setError(t('login-form.invalid-credentials'))
     } finally {
       setIsLoading(false)
@@ -68,6 +67,11 @@ export default function LoginPage() {
   }
 
   useEffect(() => {
+    const storedError = localStorage.getItem('loginError')
+    if (storedError) {
+      setError(storedError)
+    }
+
     const storedLanguage = localStorage.getItem('languague')
     if (storedLanguage) {
       i18n.changeLanguage(storedLanguage)
