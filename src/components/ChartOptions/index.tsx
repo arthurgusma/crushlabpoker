@@ -42,7 +42,7 @@ export default function ChartOptions() {
         <h1 className="mb-2 text-main-gold w-fit">
           {t('chart-options.select-position')}
         </h1>
-        <section className="flex justify-between mb-4 max-sm:grid grid-cols-3 gap-1 max-sm:gap-x-10 max-sm:w-fit">
+        <section className="flex justify-between mb-4 max-sm:grid grid-cols-3 gap-1 max-sm:w-fit">
           {tablePositions.map((position) => (
             <ChartOptionsButton
               key={position}
@@ -53,7 +53,7 @@ export default function ChartOptions() {
             />
           ))}
           {tablePositions.length === 1 && (
-            <i className="mt-1">
+            <i className="mt-1 max-sm:-mt-2 max-sm:w-60 max-sm:-ml-4">
               <Link href="/billing" className="underline-offset-1">
                 <span className="underline text-blue-300">
                   {t('no-subscriber.subscribe')}
@@ -66,7 +66,7 @@ export default function ChartOptions() {
         <h1 className="mb-2 text-main-gold w-fit">
           {t('chart-options.select-action')}
         </h1>
-        <section className="flex justify-between mb-4 max-sm:w-fit max-sm:grid grid-cols-3 gap-1 max-sm:gap-x-10">
+        <section className="flex justify-between mb-4 max-sm:w-fit max-sm:grid grid-cols-3 gap-1 ">
           {handleSelection(selectedPosition).map((action) => (
             <ChartOptionsButton
               key={action}

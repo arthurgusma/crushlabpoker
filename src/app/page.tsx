@@ -23,7 +23,7 @@ export default async function App() {
             <Image
               src={logoPositivo}
               alt="Crush Lab Poker Logo"
-              width={200}
+              width={250}
               height={200}
               className="md:hidden mb-14 mx-auto"
             />

@@ -30,7 +30,7 @@ export const Chart: React.FC<ChartProps> = ({ range }) => {
               {row.map((hand) => (
                 <td
                   key={hand}
-                  className={`border border-black sm:p-1 text-center max-sm:text-sm sm:w-10 sm:h-10 md:w-10 md:h-10 ${handleGetHandColor(
+                  className={`border border-black sm:p-1 text-center max-sm:text-xs sm:w-10 sm:h-10 md:w-10 md:h-10 ${handleGetHandColor(
                     hand,
                   )}`}
                 >
