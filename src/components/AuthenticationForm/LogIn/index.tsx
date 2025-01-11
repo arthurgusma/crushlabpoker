@@ -59,7 +59,7 @@ export default function LoginPage() {
       }
       setTimeout(() => {
         router.push('/home')
-      }, 400)
+      }, 300)
     } catch (error) {
       setError(t('login-form.invalid-credentials'))
     } finally {
