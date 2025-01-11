@@ -15,6 +15,7 @@ import LoadingSpinner from '@/components/UI/LoadingSpinner'
 import ForgotPassword from '../ForgotPassword'
 import { useRouter } from 'next/navigation'
 import ErrorMessage from '@/components/UI/ErrorMessage'
+import { toast } from 'react-toastify'
 
 export enum FormType {
   'SIGNIN',
@@ -57,9 +58,9 @@ export default function LoginPage() {
       if (!result?.ok) {
         throw new Error('Sign in failed')
       }
-      router.refresh()
-      router.prefetch('/home')
-      router.push('/home')
+      setTimeout(() => {
+        router.push('/home')
+      }, 1000)
     } catch (error) {
       setError(t('login-form.invalid-credentials'))
     } finally {
