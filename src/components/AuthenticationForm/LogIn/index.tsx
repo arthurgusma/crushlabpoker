@@ -14,6 +14,7 @@ import { signIn } from 'next-auth/react'
 import LoadingSpinner from '@/components/UI/LoadingSpinner'
 import ForgotPassword from '../ForgotPassword'
 import ErrorMessage from '@/components/UI/ErrorMessage'
+import { useRouter } from 'next/navigation'
 
 export enum FormType {
   'SIGNIN',
@@ -25,6 +26,8 @@ export default function LoginPage() {
   const [formType, setFormType] = useState<FormType>(FormType.SIGNIN)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  const router = useRouter()
 
   const { t } = useTranslation()
   const schema = z.object({
@@ -46,19 +49,22 @@ export default function LoginPage() {
     setError(null)
     try {
       setIsLoading(true)
-      const result = await signIn('credentials', {
+      const response = await signIn('credentials', {
         email: data.email,
         password: data.password,
-        callbackUrl: '/home',
+        redirect: false,
       })
 
-      if (!result?.ok) {
-        const errorMessage = t('login-form.invalid-credentials')
-        localStorage.setItem('loginError', errorMessage)
-        throw new Error('Sign in failed')
+      if (!response || !response.ok) {
+        setError(t('login-form.invalid-credentials'))
+        throw new Error(response?.error || 'Sign-in failed')
       }
-      localStorage.removeItem('loginError')
+
+      await new Promise((resolve) => setTimeout(resolve, 500))
+
+      router.push('/home')
     } catch (error) {
+      setError(t('login-form.invalid-credentials'))
       console.log(error)
     } finally {
       setIsLoading(false)
@@ -66,11 +72,6 @@ export default function LoginPage() {
   }
 
   useEffect(() => {
-    const storedError = localStorage.getItem('loginError')
-    if (storedError) {
-      setError(storedError)
-    }
-
     const storedLanguage = localStorage.getItem('languague')
     if (storedLanguage) {
       i18n.changeLanguage(storedLanguage)
