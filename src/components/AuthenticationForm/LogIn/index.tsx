@@ -60,7 +60,7 @@ export default function LoginPage() {
         throw new Error(response?.error || 'Sign-in failed')
       }
 
-      await new Promise((resolve) => setTimeout(resolve, 500))
+      await new Promise((resolve) => setTimeout(resolve, 5000))
 
       router.push('/home')
     } catch (error) {
