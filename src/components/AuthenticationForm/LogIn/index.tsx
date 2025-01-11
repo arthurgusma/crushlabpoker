@@ -10,11 +10,10 @@ import { Input } from '@/components/UI/Input'
 import { useTranslation } from 'react-i18next'
 import SwitchForm from '../SwitchForm'
 import i18n from '@/i18n'
-import { getSession, signIn } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
 import LoadingSpinner from '@/components/UI/LoadingSpinner'
 import ForgotPassword from '../ForgotPassword'
 import ErrorMessage from '@/components/UI/ErrorMessage'
-import { useRouter } from 'next/navigation'
 
 export enum FormType {
   'SIGNIN',
@@ -26,8 +25,6 @@ export default function LoginPage() {
   const [formType, setFormType] = useState<FormType>(FormType.SIGNIN)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-
-  const router = useRouter()
 
   const { t } = useTranslation()
   const schema = z.object({
@@ -52,18 +49,13 @@ export default function LoginPage() {
       const response = await signIn('credentials', {
         email: data.email,
         password: data.password,
-        redirect: false,
+        callbackUrl: '/home',
       })
 
       if (!response || !response.ok) {
         setError(t('login-form.invalid-credentials'))
         throw new Error(response?.error || 'Sign-in failed')
       }
-
-      const res = await getSession()
-      console.log(res)
-
-      router.push('/home')
     } catch (error) {
       setError(t('login-form.invalid-credentials'))
       console.log(error)
