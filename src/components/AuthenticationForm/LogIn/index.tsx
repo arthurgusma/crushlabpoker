@@ -60,7 +60,6 @@ export default function LoginPage() {
       localStorage.removeItem('loginError')
     } catch (error) {
       console.log(error)
-      setError(t('login-form.invalid-credentials'))
     } finally {
       setIsLoading(false)
     }
