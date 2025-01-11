@@ -57,9 +57,8 @@ export default function LoginPage() {
       if (!result?.ok) {
         throw new Error('Sign in failed')
       }
-      setTimeout(() => {
-        router.push('/home')
-      }, 400)
+      router.refresh()
+      router.push('/home')
     } catch (error) {
       setError(t('login-form.invalid-credentials'))
     } finally {
