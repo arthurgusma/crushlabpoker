@@ -1,7 +1,7 @@
 import Pricing from '@/components/Pricing'
 import Stripe from 'stripe'
 import SubscriptionPageData from '@/components/SubscriptionPageData'
-import { getUserSubscription } from '../_actions'
+import { getUserSubscription } from '../../_actions'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 
