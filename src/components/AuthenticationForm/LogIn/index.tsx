@@ -53,7 +53,7 @@ export default function LoginPage() {
       })
     } catch (error) {
       setError(t('login-form.invalid-credentials'))
-      console.log(error)
+      console.error(error)
     } finally {
       setIsLoading(false)
     }
