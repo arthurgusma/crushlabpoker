@@ -209,4 +209,6 @@ export const BACKGROUND_RANGE_COLORS: { [key in keyof Range]: string } = {
   threeBet: 'bg-chart-orange text-black',
   shoveVs4Bet: 'bg-chart-purple text-main-champagne',
   call: 'bg-chart-light-blue text-black',
+  threeBetAndFold: 'bg-chart-brown text-main-champagne',
+  threeBetAndCall: 'bg-chart-blue text-main-champagne',
 }
