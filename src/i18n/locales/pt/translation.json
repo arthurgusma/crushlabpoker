@@ -8,7 +8,9 @@
         "fourBetAndCall": "4Bet e Pagar vs All In",
         "threeBet": "3Bet",
         "shoveVs4Bet": "All In Vs 4Bet",
-        "call": "Pagar"
+        "call": "Pagar",
+        "threeBetAndFold": "3Bet e Fold",
+        "threeBetAndCall": "3Bet e Pagar"
     },
     "chart-options": {
         "select-position": "Selecione sua posição",

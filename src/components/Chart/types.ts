@@ -7,6 +7,8 @@ export interface Range {
   threeBet?: string[]
   shoveVs4Bet?: string[]
   call?: string[]
+  threeBetAndFold?: string[]
+  threeBetAndCall?: string[]
 }
 
 export interface ChartProps {
