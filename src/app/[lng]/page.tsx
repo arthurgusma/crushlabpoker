@@ -27,6 +27,10 @@ export default async function App() {
               height={200}
               className="md:hidden mb-14 mx-auto"
             />
+            <h1 className="text-main-brown ">Crush Lab Poker</h1>
+            <h2 className="text-main-dark-green text-base">
+              Crush your limits
+            </h2>
             <HomeForm />
           </div>
         </div>
