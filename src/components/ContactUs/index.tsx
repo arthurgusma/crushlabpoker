@@ -37,7 +37,7 @@ export default function ContactUs() {
           setIsOpen(false)
         },
         (error) => {
-          console.log('FAILED...', error.text)
+          console.error(error.text)
           toast.error(t('contact-us.alert.error'))
         },
       )

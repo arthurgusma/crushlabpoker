@@ -26,7 +26,6 @@ export default async function RootLayout({
   children: React.ReactNode
   params: { lng: 'en-US' | 'pt-BR' }
 }>) {
-  console.log(lng)
   return (
     <html lang={lng} dir={dir(lng)}>
       <body className={inter.className}>
