@@ -27,7 +27,7 @@
     },
     "about-page": {
         "title": "Sobre o Crush Lab Poker",
-        "content": "O Crush Lab Poker é uma ferramenta que auxilia jogadores de poker a se basearem em um range  GTO com ações pré-flop, como raise, 3-bet, folds, entre outros. Com a nossa ferramenta de charts dinâmicos você não terá mais dúvida sobre o que fazer em determinadas situações. O chart disponível tem o foco em jogadores de cash game e considera um stack médio de 50+ big blinds. Em breve, novas versões com filtros de perfil de adversários (tight, fish, reg), filtros de stack médio, além da possibilidade de criar seus próprios ranges e salvá-los para que os ranges sejam mais compatíveis com o seu jogo e adversários."
+        "content": "O Crush Lab Poker é uma ferramenta que auxilia jogadores de poker a se basearem em um range GTO com ações pré-flop, como raise, 3-bet, folds, entre outros. Com a nossa ferramenta de charts dinâmicos você não terá mais dúvida sobre o que fazer em determinadas situações. O chart disponível tem o foco em jogadores de cash game e considera um stack médio de 50+ big blinds. Em breve, novas versões com filtros de perfil de adversários (tight, fish, reg), filtros de stack médio, além da possibilidade de criar seus próprios ranges e salvá-los para que os ranges sejam mais compatíveis com o seu jogo e adversários."
     },
     "login-form": {
         "name": "Nome",
