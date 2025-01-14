@@ -17,6 +17,8 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Crush Lab Poker',
   description: 'Seja lucrativo no poker com Crush Lab Poker',
+  keywords:
+    'poker, poker online, poker ao vivo, charts, pre flop, pré flop, pre-flop, ranges, range, gráficos, gráfico, lucrativo no poker, lucratividade no poker, poker lucrativo, poker lucratividade, poker rentável, poker rentabilidade',
 }
 
 export default async function RootLayout({
