@@ -25,7 +25,7 @@ export default async function App() {
               alt="Crush Lab Poker Logo"
               width={250}
               height={200}
-              className="md:hidden mb-14 mx-auto"
+              className="md:hidden mb-8 mx-auto"
             />
             <h1 className="text-main-brown ">Crush Lab Poker</h1>
             <h2 className="text-main-dark-green text-base">
