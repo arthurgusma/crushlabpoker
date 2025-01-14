@@ -58,7 +58,7 @@ export default function ContactUs() {
       )}
 
       {isOpen && (
-        <div className="bg-main-gold shadow-lg rounded-lg p-4 w-80">
+        <div className="bg-main-champagne shadow-lg rounded-lg p-4 w-80">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-semibold text-main-dark-green">
               {t('contact-us.title')}
