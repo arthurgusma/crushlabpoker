@@ -4,9 +4,10 @@ import Stripe from 'stripe'
 
 type PurchaseProps = {
   purchase: Stripe.PaymentIntent
+  language: string
 }
 
-export default function PurchaseCard({ purchase }: PurchaseProps) {
+export default function PurchaseCard({ purchase, language }: PurchaseProps) {
   const { t } = useTranslation()
   return (
     <section className="my-6">
@@ -31,7 +32,7 @@ export default function PurchaseCard({ purchase }: PurchaseProps) {
         </span>
         <span>
           {'created' in purchase
-            ? new Date(purchase.created * 1000).toLocaleDateString()
+            ? new Date(purchase.created * 1000).toLocaleDateString(language)
             : 'N/A'}
         </span>
       </div>
