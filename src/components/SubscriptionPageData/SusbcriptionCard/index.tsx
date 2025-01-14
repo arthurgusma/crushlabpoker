@@ -8,9 +8,10 @@ import Stripe from 'stripe'
 
 type Props = {
   subscription: Stripe.Subscription
+  language: string
 }
 
-export default function SubscriptionCard({ subscription }: Props) {
+export default function SubscriptionCard({ subscription, language }: Props) {
   const [dialogOpen, setDialogOpen] = useState(false)
   const { t } = useTranslation()
 
@@ -54,7 +55,7 @@ export default function SubscriptionCard({ subscription }: Props) {
         </span>
         <span>
           {'created' in subscription
-            ? new Date(subscription.created * 1000).toLocaleDateString()
+            ? new Date(subscription.created * 1000).toLocaleDateString(language)
             : 'N/A'}
         </span>
       </div>
@@ -64,7 +65,9 @@ export default function SubscriptionCard({ subscription }: Props) {
         </span>
         <span>
           {'current_period_start' in subscription
-            ? new Date(subscription.current_period_start * 1000).toDateString()
+            ? new Date(
+                subscription.current_period_start * 1000,
+              ).toLocaleDateString(language)
             : 'N/A'}
         </span>
       </div>
@@ -74,7 +77,9 @@ export default function SubscriptionCard({ subscription }: Props) {
         </span>
         <span>
           {'current_period_end' in subscription
-            ? new Date(subscription.current_period_end * 1000).toDateString()
+            ? new Date(
+                subscription.current_period_end * 1000,
+              ).toLocaleDateString(language)
             : 'N/A'}
         </span>
       </div>
