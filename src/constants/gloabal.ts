@@ -207,9 +207,9 @@ export const BACKGROUND_RANGE_COLORS: { [key in keyof Range]: string } = {
   fourBetAndFold: 'bg-chart-blue text-main-champagne',
   fourBetAndCall: 'bg-chart-yellow text-black',
   threeBet: 'bg-chart-orange text-black',
-  shoveVs4Bet: 'bg-chart-purple text-main-champagne',
+  shoveVs4Bet: 'bg-chart-orange text-black',
   call: 'bg-chart-light-blue text-black',
   threeBetAndFold: 'bg-chart-brown text-main-champagne',
-  threeBetAndCall: 'bg-chart-blue text-main-champagne',
+  threeBetAndCall: 'bg-chart-purple text-main-champagne',
   callMiniRaise: 'bg-chart-default text-main-champagne',
 }

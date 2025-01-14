@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss'
-import colors from 'tailwindcss/colors'
+import colors, { green } from 'tailwindcss/colors'
 
 const config: Config = {
   content: [
@@ -29,6 +29,7 @@ const config: Config = {
       chart: {
         red: '#d00000',
         green: '#70e000',
+        moss: '#BAD8B6',
         blue: '#1a759f',
         yellow: '#eeef20',
         orange: '#ff7f00',

@@ -47,7 +47,7 @@ export const Chart: React.FC<ChartProps> = ({ range }) => {
           ))}
         </tbody>
       </table>
-      <div className="hidden bg-chart-red bg-chart-blue bg-chart-green bg-chart-yellow bg-chart-orange bg-chart-purple bg-chart-light-blue bg-chart-brown bg-chart-default" />
+      <div className="hidden bg-chart-red bg-chart-moss bg-chart-green bg-chart-yellow bg-chart-orange bg-chart-purple bg-chart-light-blue bg-chart-brown bg-chart-default bg-chart-orange bg-chart-blue" />
     </div>
   )
 }
