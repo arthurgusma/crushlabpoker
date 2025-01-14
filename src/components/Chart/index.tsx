@@ -22,6 +22,8 @@ export const Chart: React.FC<ChartProps> = ({ range }) => {
       return BACKGROUND_RANGE_COLORS.threeBetAndFold
     if (range.threeBetAndCall?.includes(hand))
       return BACKGROUND_RANGE_COLORS.threeBetAndCall
+    if (range.callMiniRaise?.includes(hand))
+      return BACKGROUND_RANGE_COLORS.callMiniRaise
     return 'bg-main-champagne text-black'
   }
 
@@ -45,7 +47,7 @@ export const Chart: React.FC<ChartProps> = ({ range }) => {
           ))}
         </tbody>
       </table>
-      <div className="hidden bg-chart-red bg-chart-blue bg-chart-green bg-chart-yellow bg-chart-orange bg-chart-purple bg-chart-light-blue bg-chart-brown" />
+      <div className="hidden bg-chart-red bg-chart-blue bg-chart-green bg-chart-yellow bg-chart-orange bg-chart-purple bg-chart-light-blue bg-chart-brown bg-chart-default" />
     </div>
   )
 }

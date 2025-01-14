@@ -35,7 +35,7 @@ const config: Config = {
         purple: '#a020f0',
         'light-blue': '#80C4E9',
         brown: '#997C70',
-        default: '#7a918d',
+        default: '#6A80B9',
       },
     },
   },

@@ -9,6 +9,7 @@ export interface Range {
   call?: string[]
   threeBetAndFold?: string[]
   threeBetAndCall?: string[]
+  callMiniRaise?: string[]
 }
 
 export interface ChartProps {

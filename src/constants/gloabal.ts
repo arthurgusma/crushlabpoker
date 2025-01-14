@@ -211,4 +211,5 @@ export const BACKGROUND_RANGE_COLORS: { [key in keyof Range]: string } = {
   call: 'bg-chart-light-blue text-black',
   threeBetAndFold: 'bg-chart-brown text-main-champagne',
   threeBetAndCall: 'bg-chart-blue text-main-champagne',
+  callMiniRaise: 'bg-chart-default text-main-champagne',
 }

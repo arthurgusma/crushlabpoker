@@ -10,7 +10,8 @@
         "shoveVs4Bet": "All In Vs 4Bet",
         "call": "Pagar",
         "threeBetAndFold": "3Bet e Fold",
-        "threeBetAndCall": "3Bet e Pagar"
+        "threeBetAndCall": "3Bet e Pagar",
+        "callMiniRaise": "Pagar Mini Raise"
     },
     "chart-options": {
         "select-position": "Selecione sua posição",
