@@ -15,7 +15,7 @@ acceptLanguage.languages(languages)
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|site.webmanifest).*)',
+    '/((?!api|_next/static|_next/image|assets|icon.svg|sw.js|site.webmanifest).*)',
   ],
 }
 
