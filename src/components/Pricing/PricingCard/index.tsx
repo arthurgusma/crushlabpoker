@@ -46,7 +46,7 @@ export default function PricingCard({
       <p className="text-sm mb-4">{description}</p>
 
       <ButtonSubscribe
-        onClick={() => router.push(`/billing/${id}?type=${plan}`)}
+        onClick={() => router.push(`/pt-BR/billing/${id}?type=${plan}`)}
       >
         {plan === 'one_time'
           ? t('subscription-page.buy-button')

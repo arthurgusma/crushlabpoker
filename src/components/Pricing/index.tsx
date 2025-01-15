@@ -28,7 +28,7 @@ export default function Pricing({ prices }: Props) {
       {prices.map((price) => (
         <PricingCard
           key={price.id}
-          plan={price.type || 'one_time'}
+          plan={price.type}
           price={formartCurrencyToReal((price.unit_amount || 0) / 100)}
           description={t('subscription-page.description')}
           features={features}
