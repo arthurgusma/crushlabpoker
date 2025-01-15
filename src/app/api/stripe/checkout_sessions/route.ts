@@ -5,6 +5,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 export async function POST(request: Request) {
   const origin = request.headers.get('origin')
 
+  console.log(origin)
+
   if (!origin) {
     throw new Error('Request does not contain an origin header.')
   }
@@ -23,7 +25,7 @@ export async function POST(request: Request) {
       ],
       locale: language,
       mode: type,
-      return_url: `${origin}/billing/confirm?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: `${origin}/pt-BR/billing/confirm?session_id={CHECKOUT_SESSION_ID}`,
     })
     return NextResponse.json({ clientSecret: session.client_secret })
   } catch (error) {
