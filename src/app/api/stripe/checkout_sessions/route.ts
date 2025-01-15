@@ -5,8 +5,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 export async function POST(request: Request) {
   const origin = request.headers.get('origin')
 
-  console.log(origin)
-
   if (!origin) {
     throw new Error('Request does not contain an origin header.')
   }
