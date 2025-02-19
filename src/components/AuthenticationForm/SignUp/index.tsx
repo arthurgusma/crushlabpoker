@@ -87,28 +87,32 @@ export default function SignIn({ setFormType, formType }: SignInProps) {
         type="text"
         label={t('login-form.full-name')}
         error={errors.fullName?.message}
+        data-testID="full-name"
       />
       <Input
         {...register('email')}
         type="email"
         label={t('login-form.email')}
         error={errors.email?.message}
+        data-testID="email"
       />
       <Input
         {...register('password')}
         type="password"
         label={t('login-form.password')}
         error={errors.password?.message}
+        data-testID="password"
       />
       <Input
         {...register('confirmPassword')}
         type="password"
         label={t('login-form.confirm-password')}
         error={errors.confirmPassword?.message}
+        data-testID="confirm-password"
       />
       {error && <ErrorMessage message={error} />}
       <div className="flex justify-center py-4">
-        <ButtonSubmit width="160" disabled={isLoading}>
+        <ButtonSubmit width="160" disabled={isLoading} data-testID="submit-btn">
           {isLoading ? <LoadingSpinner /> : t('login-form.signup')}
         </ButtonSubmit>
       </div>

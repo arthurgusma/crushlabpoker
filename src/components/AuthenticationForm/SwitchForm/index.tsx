@@ -21,6 +21,7 @@ export default function SwitchForm({
       <div className="flex justify-center text-main-light-green">
         <p className="mr-1 p-0">{description}</p>
         <ButtonText
+          id="sign"
           onClick={() =>
             setFormType(
               formType === FormType.SIGNIN ? FormType.SIGNUP : FormType.SIGNIN,
