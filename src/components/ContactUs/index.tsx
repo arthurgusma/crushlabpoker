@@ -1,9 +1,9 @@
 'use client'
 import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
-import LoadingSpinner from '../UI/LoadingSpinner'
+import LoadingSpinner from '../ui/LoadingSpinner'
 import { toast } from 'react-toastify'
-import { Input, TextArea } from '../UI/Input'
+import { Input, TextArea } from '../ui/Input'
 import { useTranslation } from 'react-i18next'
 
 export default function ContactUs() {

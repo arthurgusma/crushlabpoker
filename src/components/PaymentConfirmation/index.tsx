@@ -1,7 +1,7 @@
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
-import LoadingSpinner from '../UI/LoadingSpinner'
+import LoadingSpinner from '../ui/LoadingSpinner'
 
 import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'

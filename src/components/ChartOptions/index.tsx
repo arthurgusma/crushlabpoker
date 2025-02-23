@@ -9,7 +9,7 @@ import ColorDescription from '../ColorDescription'
 import { useTranslation } from 'react-i18next'
 import { GetTablePositions } from '@/app/_actions'
 import Link from 'next/link'
-import LoadingSpinner from '../UI/LoadingSpinner'
+import LoadingSpinner from '../ui/LoadingSpinner'
 
 export default function ChartOptions() {
   const [selectedPosition, setSelectedPosition] = useState<string>('UTG')

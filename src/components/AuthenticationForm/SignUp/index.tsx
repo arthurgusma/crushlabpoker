@@ -3,14 +3,14 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { ButtonSubmit } from '@/components/UI/Buttons'
+import { ButtonSubmit } from '@/components/ui/Buttons'
 import { Dispatch, SetStateAction, useState } from 'react'
-import { Input } from '@/components/UI/Input'
+import { Input } from '@/components/ui/Input'
 import { useTranslation } from 'react-i18next'
 import SwitchForm from '../SwitchForm'
 import { signIn } from 'next-auth/react'
-import LoadingSpinner from '@/components/UI/LoadingSpinner'
-import ErrorMessage from '@/components/UI/ErrorMessage'
+import LoadingSpinner from '@/components/ui/LoadingSpinner'
+import ErrorMessage from '@/components/ui/ErrorMessage'
 import { FormType } from '../LogIn'
 
 interface SignInProps {

@@ -1,6 +1,6 @@
 'use client'
-import { CancelSubscriptionButton } from '@/components/UI/Buttons'
-import ConfirmationDialog from '@/components/UI/Dialog'
+import { CancelSubscriptionButton } from '@/components/ui/Buttons'
+import ConfirmationDialog from '@/components/ui/Dialog'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { toast } from 'react-toastify'

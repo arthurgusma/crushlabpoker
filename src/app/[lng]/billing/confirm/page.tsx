@@ -1,7 +1,7 @@
 'use client'
 
 import PaymentConfirmation from '@/components/PaymentConfirmation'
-import LoadingSpinner from '@/components/UI/LoadingSpinner'
+import LoadingSpinner from '@/components/ui/LoadingSpinner'
 import { SessionProvider } from 'next-auth/react'
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'

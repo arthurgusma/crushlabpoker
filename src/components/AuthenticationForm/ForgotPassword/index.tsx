@@ -1,8 +1,8 @@
 'use client'
 
-import { ButtonSubmit, ButtonText } from '@/components/UI/Buttons'
-import { Input } from '@/components/UI/Input'
-import LoadingSpinner from '@/components/UI/LoadingSpinner'
+import { ButtonSubmit, ButtonText } from '@/components/ui/Buttons'
+import { Input } from '@/components/ui/Input'
+import LoadingSpinner from '@/components/ui/LoadingSpinner'
 import { auth } from '@/lib/firebaseConfig'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { sendPasswordResetEmail } from 'firebase/auth'

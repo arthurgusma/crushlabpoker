@@ -1,7 +1,7 @@
 'use client'
 
 import LogIn from '../AuthenticationForm/LogIn/index'
-import { ButtonSubmit } from '../UI/Buttons'
+import { ButtonSubmit } from '../ui/Buttons'
 import { useTranslation } from 'react-i18next'
 import { FcGoogle } from 'react-icons/fc'
 import { useEffect } from 'react'

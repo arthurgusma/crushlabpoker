@@ -1,6 +1,6 @@
 'use client'
 
-import { ButtonSubscribe } from '@/components/UI/Buttons'
+import { ButtonSubscribe } from '@/components/ui/Buttons'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import { useTranslation } from 'react-i18next'

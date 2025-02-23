@@ -1,4 +1,4 @@
-import { ButtonText } from '@/components/UI/Buttons'
+import { ButtonText } from '@/components/ui/Buttons'
 import { Dispatch, SetStateAction } from 'react'
 import { t } from 'i18next'
 import { FormType } from '../LogIn'
